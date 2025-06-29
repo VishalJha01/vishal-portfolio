@@ -96,40 +96,49 @@ export default function Portfolio() {
 
   const skills = [
     { name: "Python", icon: "🐍" },
+    { name: "Machine Learning", icon: "🤖" },
+    { name: "Deep Learning", icon: "🧠" },
     { name: "JavaScript", icon: "⚡" },
+    { name: "React.js", icon: "⚛️" },
     { name: "SQL", icon: "🗄️" },
     { name: "HTML5", icon: "🌐" },
     { name: "CSS3", icon: "🎨" },
-    { name: "Bootstrap", icon: "🅱️" },
     { name: "Tailwind CSS", icon: "💨" },
+    { name: "Flask", icon: "🌶️" },
     { name: "Git/GitHub", icon: "📚" },
-    { name: "Power BI", icon: "📊" },
-    { name: "Tableau", icon: "📈" },
-    { name: "MySQL", icon: "🐬" },
-    { name: "Vercel", icon: "▲" },
+    { name: "TensorFlow", icon: "🔥" },
+    { name: "PyTorch", icon: "⚡" },
+    { name: "Scikit-learn", icon: "🤖" },
+    { name: "Pandas", icon: "🐼" },
+    { name: "NumPy", icon: "🔢" },
+    { name: "Matplotlib", icon: "📉" },
+    { name: "Seaborn", icon: "📊" },
   ]
 
   const projects = [
     {
-      title: "Dr. Dubey Dental Clinic",
-      description: "Professional website for multi-specialty dental practice with online appointment system",
-      tech: ["HTML5", "CSS3", "JavaScript", "Tailwind CSS"],
-      link: "https://github.com/VishalJha01/dr-dubey-dental-clinic",
-      demo: "https://dr-dubey-dental.vercel.app",
-      image: "/projects/dr-dubey-dental.png",
-    },
-    {
       title: "Wecofy - Eco-Friendly E-commerce",
-      description: "Eco-conscious platform for environmental issue reporting and sustainability resources",
-      tech: ["HTML", "CSS", "JavaScript", "Bootstrap"],
+      description:
+        "Sustainable e-commerce platform with intelligent product recommendation system, environmental impact analytics, and responsive design. Integrated ML-based user behavior analysis.",
+      tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "Flask", "Machine Learning"],
       link: "https://github.com/VishalJha01/wecofy-eco-ecommerce",
       demo: "https://wecofy.vercel.app",
       image: "/projects/wecofy-ecommerce.png",
     },
     {
-      title: "Data Wizards - AQI Forecasting",
-      description: "Air Quality Index forecasting using Python ML models with geospatial visualization",
-      tech: ["Python", "Pandas", "NumPy", "Matplotlib", "Scikit-learn"],
+      title: "Dr. Dubey Dental Clinic",
+      description:
+        "Modern responsive website with appointment prediction system and patient analytics dashboard. Features optimized UI/UX and data-driven insights for clinic management.",
+      tech: ["HTML5", "CSS3", "JavaScript", "Tailwind CSS", "Data Analytics"],
+      link: "https://github.com/VishalJha01/dr-dubey-dental-clinic",
+      demo: "https://dr-dubey-dental.vercel.app",
+      image: "/projects/dr-dubey-dental.png",
+    },
+    {
+      title: "AQI Forecasting - Data Science Project",
+      description:
+        "Advanced machine learning model predicting Air Quality Index for Sohna region with 85%+ accuracy. Implemented time series analysis, feature engineering, and ensemble methods.",
+      tech: ["Python", "Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Seaborn", "Time Series"],
       link: "https://github.com/VishalJha01/data-wizards-aqi-forecasting",
       demo: "#",
       image: "/placeholder.svg?height=300&width=400",
@@ -138,25 +147,56 @@ export default function Portfolio() {
 
   const certifications = [
     {
-      name: "Data Analytics Certification",
-      issuer: "Trainity",
+      name: "Fundamentals of Generative AI",
+      issuer: "Microsoft",
       date: "2024",
-      description: "Comprehensive training in SQL, Excel, and data visualization",
+      description: "Core concepts and applications of generative AI and large language models",
     },
     {
-      name: "Full Stack Development",
-      issuer: "Self-Taught",
-      date: "2023-2024",
-      description: "Modern web technologies and frameworks",
+      name: "Machine Learning Specialization",
+      issuer: "Stanford/Coursera",
+      date: "2024",
+      description: "Comprehensive ML algorithms, supervised and unsupervised learning techniques",
+    },
+    {
+      name: "Data Science with Python",
+      issuer: "IBM",
+      date: "2023",
+      description: "Python programming for data science using Pandas, NumPy, and ML libraries",
+    },
+    {
+      name: "Deep Learning Fundamentals",
+      issuer: "Google",
+      date: "2024",
+      description: "Neural networks, TensorFlow, and deep learning model development",
+    },
+    {
+      name: "MySQL & Database Systems",
+      issuer: "Trainity",
+      date: "2024",
+      description: "Database design, optimization, and data warehousing for ML applications",
+    },
+    {
+      name: "Statistical Analysis & Modeling",
+      issuer: "Be10x",
+      date: "2024",
+      description: "Advanced statistics, hypothesis testing, and predictive modeling",
+    },
+    {
+      name: "Frontend Development (React)",
+      issuer: "Great Learning",
+      date: "2024",
+      description: "Modern React development and full-stack web application deployment",
     },
   ]
 
   const aboutPoints = [
-    "🚀 Building AI-driven web applications with modern technologies",
-    "📊 Transforming raw data into actionable business insights",
-    "💡 Passionate about solving real-world problems through innovation",
-    "🎯 Focused on performance, user experience, and scalability",
-    "🌱 Continuous learner exploring emerging tech trends",
+    "🎓 BCA (Hons) student specializing in AI & Data Science at K.R. Mangalam University (GPA: 8.6/10)",
+    "🤖 Data Science enthusiast building ML models and predictive analytics solutions",
+    "🚀 Full-stack developer creating responsive web applications with modern frameworks",
+    "📊 Experienced in Python-based machine learning, deep learning, and statistical modeling",
+    "🌱 Passionate about solving real-world problems using AI and data-driven technologies",
+    "🔬 Proficient in data mining, feature engineering, and model deployment pipelines",
   ]
 
   const handleDownloadCV = () => {
@@ -308,6 +348,12 @@ export default function Portfolio() {
                 Skills
               </a>
               <a
+                href="#certifications"
+                className={`${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-300 font-medium hover:scale-110 transform`}
+              >
+                Certifications
+              </a>
+              <a
                 href="#projects"
                 className={`${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-300 font-medium hover:scale-110 transform`}
               >
@@ -381,6 +427,12 @@ export default function Portfolio() {
                   Skills
                 </a>
                 <a
+                  href="#certifications"
+                  className={`block ${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-300 font-medium hover:translate-x-2 transform`}
+                >
+                  Certifications
+                </a>
+                <a
                   href="#projects"
                   className={`block ${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-300 font-medium hover:translate-x-2 transform`}
                 >
@@ -401,7 +453,7 @@ export default function Portfolio() {
       {/* Content */}
       <div className="relative z-10 pt-16">
         {/* Hero Section */}
-        <section id="home" className="container mx-auto px-4 py-20">
+        <section id="home" className="container mx-auto px-4 py-16">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-start">
               {/* Left side - Name and Content */}
@@ -433,10 +485,10 @@ export default function Portfolio() {
                   <p
                     className={`text-2xl md:text-3xl font-bold tracking-tight ${isDarkMode ? "text-gray-200" : "text-gray-800"} mb-2`}
                   >
-                    Full Stack Developer & Data Analyst
+                    Full Stack Developer & Data Scientist
                   </p>
                   <p className={`text-lg md:text-xl font-medium ${isDarkMode ? "text-red-400" : "text-red-600"} mb-4`}>
-                    Building AI-driven web applications with performance & UX focus
+                    BCA (Hons) AI & Data Science Student | ML Engineer | Problem Solver
                   </p>
                   <div className={`flex items-center space-x-2 ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}>
                     <MapPin className="w-4 h-4 text-red-500" />
@@ -539,11 +591,11 @@ export default function Portfolio() {
 
         {/* Section Divider */}
         <div
-          className={`w-full h-px ${isDarkMode ? "bg-gradient-to-r from-transparent via-red-500/30 to-transparent" : "bg-gradient-to-r from-transparent via-red-500/20 to-transparent"} my-20`}
+          className={`w-full h-px ${isDarkMode ? "bg-gradient-to-r from-transparent via-red-500/30 to-transparent" : "bg-gradient-to-r from-transparent via-red-500/20 to-transparent"} my-16`}
         />
 
         {/* About Section */}
-        <section id="about" className="container mx-auto px-4 py-20">
+        <section id="about" className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto">
             <div
               className={`scroll-animate text-center mb-16 transition-all duration-1000 ${visibleElements.has("about-title") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
@@ -555,20 +607,19 @@ export default function Portfolio() {
                 ABOUT ME
               </h2>
               <p className={`text-xl ${isDarkMode ? "text-gray-400" : "text-gray-600"} max-w-2xl mx-auto`}>
-                Passionate developer focused on creating impactful solutions
+                Passionate data scientist and full-stack developer creating AI-powered solutions
               </p>
             </div>
 
-            <div className="grid md:grid-cols-2 gap-12 items-start">
-              {/* About Points */}
+            <div className="max-w-3xl mx-auto">
               <div
-                className={`scroll-animate transition-all duration-1000 ${visibleElements.has("about-content") ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"}`}
+                className={`scroll-animate transition-all duration-1000 ${visibleElements.has("about-content") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
                 id="about-content"
               >
-                <h3 className={`text-2xl font-bold mb-6 ${isDarkMode ? "text-gray-200" : "text-gray-800"}`}>
+                <h3 className={`text-2xl font-bold mb-6 text-center ${isDarkMode ? "text-gray-200" : "text-gray-800"}`}>
                   What I Do
                 </h3>
-                <div className="space-y-4">
+                <div className="grid md:grid-cols-2 gap-6">
                   {aboutPoints.map((point, index) => (
                     <div
                       key={index}
@@ -582,52 +633,17 @@ export default function Portfolio() {
                   ))}
                 </div>
               </div>
-
-              {/* Certifications */}
-              <div
-                className={`scroll-animate transition-all duration-1000 delay-300 ${visibleElements.has("certifications") ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}
-                id="certifications"
-              >
-                <h3 className={`text-2xl font-bold mb-6 ${isDarkMode ? "text-gray-200" : "text-gray-800"}`}>
-                  Certifications & Learning
-                </h3>
-                <div className="space-y-4">
-                  {certifications.map((cert, index) => (
-                    <Card
-                      key={index}
-                      className={`${isDarkMode ? "bg-gray-900/50 border-gray-700/50" : "bg-white/50 border-gray-200/50"} backdrop-blur-sm transition-all duration-300 hover:scale-105`}
-                    >
-                      <CardContent className="p-6">
-                        <div className="flex items-start space-x-3">
-                          <Award className="w-6 h-6 text-red-500 mt-1 flex-shrink-0" />
-                          <div>
-                            <h4 className={`font-bold text-lg ${isDarkMode ? "text-gray-200" : "text-gray-800"}`}>
-                              {cert.name}
-                            </h4>
-                            <p className={`${isDarkMode ? "text-red-400" : "text-red-600"} font-medium`}>
-                              {cert.issuer} • {cert.date}
-                            </p>
-                            <p className={`${isDarkMode ? "text-gray-400" : "text-gray-600"} mt-2`}>
-                              {cert.description}
-                            </p>
-                          </div>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </div>
             </div>
           </div>
         </section>
 
         {/* Section Divider */}
         <div
-          className={`w-full h-px ${isDarkMode ? "bg-gradient-to-r from-transparent via-red-500/30 to-transparent" : "bg-gradient-to-r from-transparent via-red-500/20 to-transparent"} my-20`}
+          className={`w-full h-px ${isDarkMode ? "bg-gradient-to-r from-transparent via-red-500/30 to-transparent" : "bg-gradient-to-r from-transparent via-red-500/20 to-transparent"} my-16`}
         />
 
         {/* Skills Section */}
-        <section id="skills" className="container mx-auto px-4 py-20">
+        <section id="skills" className="container mx-auto px-4 py-16">
           <div className="max-w-6xl mx-auto">
             <div
               className={`scroll-animate text-center mb-16 transition-all duration-1000 ${visibleElements.has("skills-title") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
@@ -639,7 +655,7 @@ export default function Portfolio() {
                 SKILLS & TECHNOLOGIES
               </h2>
               <p className={`text-xl ${isDarkMode ? "text-gray-400" : "text-gray-600"} max-w-2xl mx-auto`}>
-                Technologies I use to bring ideas to life
+                Data science and development technologies I use to build intelligent solutions
               </p>
             </div>
 
@@ -667,11 +683,67 @@ export default function Portfolio() {
 
         {/* Section Divider */}
         <div
-          className={`w-full h-px ${isDarkMode ? "bg-gradient-to-r from-transparent via-red-500/30 to-transparent" : "bg-gradient-to-r from-transparent via-red-500/20 to-transparent"} my-20`}
+          className={`w-full h-px ${isDarkMode ? "bg-gradient-to-r from-transparent via-red-500/30 to-transparent" : "bg-gradient-to-r from-transparent via-red-500/20 to-transparent"} my-16`}
+        />
+
+        {/* Certifications Section */}
+        <section id="certifications" className="container mx-auto px-4 py-16">
+          <div className="max-w-6xl mx-auto">
+            <div
+              className={`scroll-animate text-center mb-16 transition-all duration-1000 ${visibleElements.has("certifications-title") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+              id="certifications-title"
+            >
+              <h2
+                className={`text-5xl md:text-6xl font-black leading-tight tracking-tight mb-6 ${isDarkMode ? "text-red-500" : "text-red-600"}`}
+              >
+                CERTIFICATIONS
+              </h2>
+              <p className={`text-xl ${isDarkMode ? "text-gray-400" : "text-gray-600"} max-w-2xl mx-auto`}>
+                Data science and development certifications showcasing expertise growth
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {certifications.map((cert, index) => (
+                <Card
+                  key={index}
+                  className={`scroll-animate group ${isDarkMode ? "bg-gray-900/50 border-gray-700/50 hover:border-red-500/70" : "bg-white/50 border-gray-200/50 hover:border-red-500/50"} backdrop-blur-sm transition-all duration-1000 hover:transform hover:scale-105 shadow-xl ${isDarkMode ? "hover:shadow-red-500/20" : "hover:shadow-red-500/10"} rounded-lg ${isDarkMode ? "hover:bg-gray-800/50" : "hover:bg-white/70"} ${visibleElements.has(`cert-${index}`) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+                  style={{ transitionDelay: `${index * 150}ms` }}
+                  id={`cert-${index}`}
+                >
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-3">
+                      <Award className="w-8 h-8 text-red-500 mt-1 flex-shrink-0 group-hover:scale-110 transition-all duration-300" />
+                      <div className="flex-1">
+                        <h4
+                          className={`font-bold text-lg mb-2 ${isDarkMode ? "text-gray-200 group-hover:text-red-400" : "text-gray-800 group-hover:text-red-600"} transition-colors duration-300`}
+                        >
+                          {cert.name}
+                        </h4>
+                        <p className={`${isDarkMode ? "text-red-400" : "text-red-600"} font-medium mb-2`}>
+                          {cert.issuer} • {cert.date}
+                        </p>
+                        <p
+                          className={`${isDarkMode ? "text-gray-400 group-hover:text-gray-300" : "text-gray-600 group-hover:text-gray-700"} text-sm leading-relaxed transition-colors duration-300`}
+                        >
+                          {cert.description}
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Section Divider */}
+        <div
+          className={`w-full h-px ${isDarkMode ? "bg-gradient-to-r from-transparent via-red-500/30 to-transparent" : "bg-gradient-to-r from-transparent via-red-500/20 to-transparent"} my-16`}
         />
 
         {/* Projects Section */}
-        <section id="projects" className="container mx-auto px-4 py-20">
+        <section id="projects" className="container mx-auto px-4 py-16">
           <div className="max-w-6xl mx-auto">
             <div
               className={`scroll-animate text-center mb-16 transition-all duration-1000 ${visibleElements.has("projects-title") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
@@ -683,7 +755,7 @@ export default function Portfolio() {
                 FEATURED PROJECTS
               </h2>
               <p className={`text-xl ${isDarkMode ? "text-gray-400" : "text-gray-600"} max-w-2xl mx-auto`}>
-                Real-world applications showcasing my development skills
+                AI-powered applications showcasing data science and full-stack development
               </p>
             </div>
 
@@ -769,11 +841,11 @@ export default function Portfolio() {
 
         {/* Section Divider */}
         <div
-          className={`w-full h-px ${isDarkMode ? "bg-gradient-to-r from-transparent via-red-500/30 to-transparent" : "bg-gradient-to-r from-transparent via-red-500/20 to-transparent"} my-20`}
+          className={`w-full h-px ${isDarkMode ? "bg-gradient-to-r from-transparent via-red-500/30 to-transparent" : "bg-gradient-to-r from-transparent via-red-500/20 to-transparent"} my-16`}
         />
 
         {/* Contact Section */}
-        <section id="contact" className="container mx-auto px-4 py-20">
+        <section id="contact" className="container mx-auto px-4 py-16">
           <div className="max-w-4xl mx-auto">
             <div
               className={`scroll-animate text-center mb-12 transition-all duration-1000 ${visibleElements.has("contact-title") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
