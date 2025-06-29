@@ -153,7 +153,7 @@ export default function Portfolio() {
       tech: ["Python", "Pandas", "NumPy", "Scikit-learn", "Streamlit", "Machine Learning"],
       link: "https://github.com/VishalJha01/Aeropulse-aqi.AI",
       demo: "https://aeropulse-aqi-ai.streamlit.app",
-      image: "/projects/aeropulse.png",
+      image: "/placeholder.svg?height=300&width=400&text=AeroPulse+AQI.AI",
     },
   ]
 
@@ -794,11 +794,14 @@ export default function Portfolio() {
                 >
                   <div className="relative h-48 overflow-hidden">
                     <Image
-                      src={project.image || "/placeholder.svg"}
+                      src={project.image || "/placeholder.svg?height=300&width=400"}
                       alt={`${project.title} - Project Screenshot`}
                       width={400}
                       height={300}
                       className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
+                      onError={(e) => {
+                        e.currentTarget.src = "/placeholder.svg?height=300&width=400"
+                      }}
                     />
                     <div
                       className={`absolute inset-0 ${isDarkMode ? "bg-gradient-to-t from-gray-900/80 to-transparent" : "bg-gradient-to-t from-white/80 to-transparent"} opacity-60 group-hover:opacity-40 transition-opacity duration-150`}
