@@ -101,6 +101,12 @@ export default function Portfolio() {
     { name: "JavaScript", icon: "⚡" },
     { name: "React.js", icon: "⚛️" },
     { name: "SQL", icon: "🗄️" },
+    { name: "Power BI", icon: "📊" },
+    { name: "Excel", icon: "📈" },
+    { name: "Tableau", icon: "📉" },
+    { name: "MySQL", icon: "🐬" },
+    { name: "PostgreSQL", icon: "🐘" },
+    { name: "MongoDB", icon: "🍃" },
     { name: "HTML5", icon: "🌐" },
     { name: "CSS3", icon: "🎨" },
     { name: "Tailwind CSS", icon: "💨" },
@@ -113,6 +119,12 @@ export default function Portfolio() {
     { name: "NumPy", icon: "🔢" },
     { name: "Matplotlib", icon: "📉" },
     { name: "Seaborn", icon: "📊" },
+    { name: "R Programming", icon: "📊" },
+    { name: "Apache Spark", icon: "⚡" },
+    { name: "Jupyter", icon: "📓" },
+    { name: "Google Analytics", icon: "📈" },
+    { name: "Data Visualization", icon: "📊" },
+    { name: "Statistical Analysis", icon: "📈" },
   ]
 
   const projects = [
@@ -239,60 +251,73 @@ export default function Portfolio() {
           className={`absolute inset-0 ${isDarkMode ? "bg-[linear-gradient(rgba(220,38,38,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(220,38,38,0.05)_1px,transparent_1px)]" : "bg-[linear-gradient(rgba(220,38,38,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(220,38,38,0.02)_1px,transparent_1px)]"} bg-[size:20px_20px]`}
         />
 
-        {/* Saturn Rings System */}
+        {/* Enhanced Saturn Rings System - Thicker & More Aesthetic */}
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="relative w-[1400px] h-[1400px]">
-            {/* Main Saturn Rings */}
+          <div className="relative w-[1600px] h-[1600px]">
+            {/* Main Outer Rings - Thicker */}
             <div
-              className={`absolute inset-0 scale-[0.9] border-4 ${isDarkMode ? "border-red-500/20" : "border-red-500/10"} rounded-full animate-saturn-main-ring ${isDarkMode ? "shadow-[0_0_50px_rgba(220,38,38,0.3)]" : "shadow-[0_0_30px_rgba(220,38,38,0.1)]"}`}
+              className={`absolute inset-0 scale-[0.9] border-8 ${isDarkMode ? "border-red-500/25" : "border-red-500/15"} rounded-full animate-saturn-main-ring ${isDarkMode ? "shadow-[0_0_80px_rgba(220,38,38,0.4),inset_0_0_40px_rgba(220,38,38,0.2)]" : "shadow-[0_0_50px_rgba(220,38,38,0.15),inset_0_0_20px_rgba(220,38,38,0.1)]"}`}
             />
             <div
-              className={`absolute inset-0 scale-[0.85] border-2 ${isDarkMode ? "border-white/15" : "border-gray-400/10"} rounded-full animate-saturn-ring-2 ${isDarkMode ? "shadow-[0_0_30px_rgba(255,255,255,0.2)]" : "shadow-[0_0_20px_rgba(0,0,0,0.1)]"}`}
+              className={`absolute inset-0 scale-[0.85] border-6 ${isDarkMode ? "border-white/20" : "border-gray-400/15"} rounded-full animate-saturn-ring-2 ${isDarkMode ? "shadow-[0_0_60px_rgba(255,255,255,0.3),inset_0_0_30px_rgba(255,255,255,0.15)]" : "shadow-[0_0_40px_rgba(0,0,0,0.15),inset_0_0_20px_rgba(0,0,0,0.1)]"}`}
             />
             <div
-              className={`absolute inset-0 scale-[0.8] border-3 ${isDarkMode ? "border-blue-500/18" : "border-blue-500/8"} rounded-full animate-saturn-ring-3 ${isDarkMode ? "shadow-[0_0_40px_rgba(59,130,246,0.25)]" : "shadow-[0_0_20px_rgba(59,130,246,0.1)]"}`}
-            />
-
-            {/* Inner Ring System */}
-            <div
-              className={`absolute inset-0 scale-[0.75] border-2 ${isDarkMode ? "border-red-400/12" : "border-red-400/6"} rounded-full animate-saturn-ring-4`}
-            />
-            <div
-              className={`absolute inset-0 scale-[0.7] border ${isDarkMode ? "border-white/10" : "border-gray-400/5"} rounded-full animate-saturn-ring-5`}
-            />
-            <div
-              className={`absolute inset-0 scale-[0.65] border-2 ${isDarkMode ? "border-blue-400/15" : "border-blue-400/7"} rounded-full animate-saturn-ring-6`}
+              className={`absolute inset-0 scale-[0.8] border-6 ${isDarkMode ? "border-blue-500/22" : "border-blue-500/12"} rounded-full animate-saturn-ring-3 ${isDarkMode ? "shadow-[0_0_70px_rgba(59,130,246,0.35),inset_0_0_35px_rgba(59,130,246,0.2)]" : "shadow-[0_0_40px_rgba(59,130,246,0.15),inset_0_0_20px_rgba(59,130,246,0.1)]"}`}
             />
 
-            {/* Outer Ring System */}
+            {/* Medium Rings - Enhanced Thickness */}
             <div
-              className={`absolute inset-0 scale-[0.95] border ${isDarkMode ? "border-red-300/8" : "border-red-300/4"} rounded-full animate-saturn-ring-7`}
+              className={`absolute inset-0 scale-[0.75] border-4 ${isDarkMode ? "border-red-400/18" : "border-red-400/10"} rounded-full animate-saturn-ring-4 ${isDarkMode ? "shadow-[0_0_50px_rgba(248,113,113,0.25)]" : "shadow-[0_0_30px_rgba(248,113,113,0.12)]"}`}
             />
             <div
-              className={`absolute inset-0 scale-[1.0] border ${isDarkMode ? "border-white/6" : "border-gray-400/3"} rounded-full animate-saturn-ring-8`}
+              className={`absolute inset-0 scale-[0.7] border-3 ${isDarkMode ? "border-white/15" : "border-gray-400/8"} rounded-full animate-saturn-ring-5 ${isDarkMode ? "shadow-[0_0_40px_rgba(255,255,255,0.2)]" : "shadow-[0_0_25px_rgba(0,0,0,0.1)]"}`}
             />
             <div
-              className={`absolute inset-0 scale-[1.05] border ${isDarkMode ? "border-blue-300/8" : "border-blue-300/4"} rounded-full animate-saturn-ring-9`}
+              className={`absolute inset-0 scale-[0.65] border-4 ${isDarkMode ? "border-blue-400/20" : "border-blue-400/12"} rounded-full animate-saturn-ring-6 ${isDarkMode ? "shadow-[0_0_45px_rgba(96,165,250,0.3)]" : "shadow-[0_0_25px_rgba(96,165,250,0.15)]"}`}
             />
 
-            {/* Dense Inner Rings */}
+            {/* Outer Extended Rings - New Larger Rings */}
             <div
-              className={`absolute inset-0 scale-[0.6] border ${isDarkMode ? "border-red-500/10" : "border-red-500/5"} rounded-full animate-saturn-ring-10`}
+              className={`absolute inset-0 scale-[0.95] border-3 ${isDarkMode ? "border-red-300/12" : "border-red-300/6"} rounded-full animate-saturn-ring-7 ${isDarkMode ? "shadow-[0_0_35px_rgba(252,165,165,0.2)]" : "shadow-[0_0_20px_rgba(252,165,165,0.1)]"}`}
             />
             <div
-              className={`absolute inset-0 scale-[0.55] border ${isDarkMode ? "border-white/8" : "border-gray-400/4"} rounded-full animate-saturn-ring-11`}
+              className={`absolute inset-0 scale-[1.0] border-2 ${isDarkMode ? "border-white/10" : "border-gray-400/5"} rounded-full animate-saturn-ring-8 ${isDarkMode ? "shadow-[0_0_30px_rgba(255,255,255,0.15)]" : "shadow-[0_0_15px_rgba(0,0,0,0.08)]"}`}
             />
             <div
-              className={`absolute inset-0 scale-[0.5] border ${isDarkMode ? "border-blue-500/12" : "border-blue-500/6"} rounded-full animate-saturn-ring-12`}
+              className={`absolute inset-0 scale-[1.05] border-3 ${isDarkMode ? "border-blue-300/12" : "border-blue-300/6"} rounded-full animate-saturn-ring-9 ${isDarkMode ? "shadow-[0_0_40px_rgba(147,197,253,0.25)]" : "shadow-[0_0_20px_rgba(147,197,253,0.12)]"}`}
+            />
+
+            {/* New Extended Outer Rings */}
+            <div
+              className={`absolute inset-0 scale-[1.1] border-4 ${isDarkMode ? "border-red-500/15" : "border-red-500/8"} rounded-full animate-saturn-ring-16 ${isDarkMode ? "shadow-[0_0_60px_rgba(220,38,38,0.2)]" : "shadow-[0_0_30px_rgba(220,38,38,0.1)]"}`}
             />
             <div
-              className={`absolute inset-0 scale-[0.45] border ${isDarkMode ? "border-red-400/8" : "border-red-400/4"} rounded-full animate-saturn-ring-13`}
+              className={`absolute inset-0 scale-[1.15] border-3 ${isDarkMode ? "border-blue-400/12" : "border-blue-400/6"} rounded-full animate-saturn-ring-17 ${isDarkMode ? "shadow-[0_0_50px_rgba(96,165,250,0.18)]" : "shadow-[0_0_25px_rgba(96,165,250,0.1)]"}`}
+            />
+
+            {/* Dense Inner Rings - Enhanced */}
+            <div
+              className={`absolute inset-0 scale-[0.6] border-3 ${isDarkMode ? "border-red-500/15" : "border-red-500/8"} rounded-full animate-saturn-ring-10 ${isDarkMode ? "shadow-[0_0_35px_rgba(220,38,38,0.2)]" : "shadow-[0_0_20px_rgba(220,38,38,0.1)]"}`}
             />
             <div
-              className={`absolute inset-0 scale-[0.4] border ${isDarkMode ? "border-white/6" : "border-gray-400/3"} rounded-full animate-saturn-ring-14`}
+              className={`absolute inset-0 scale-[0.55] border-2 ${isDarkMode ? "border-white/12" : "border-gray-400/6"} rounded-full animate-saturn-ring-11 ${isDarkMode ? "shadow-[0_0_25px_rgba(255,255,255,0.15)]" : "shadow-[0_0_15px_rgba(0,0,0,0.08)]"}`}
             />
             <div
-              className={`absolute inset-0 scale-[0.35] border ${isDarkMode ? "border-blue-400/10" : "border-blue-400/5"} rounded-full animate-saturn-ring-15`}
+              className={`absolute inset-0 scale-[0.5] border-3 ${isDarkMode ? "border-blue-500/18" : "border-blue-500/10"} rounded-full animate-saturn-ring-12 ${isDarkMode ? "shadow-[0_0_30px_rgba(59,130,246,0.25)]" : "shadow-[0_0_18px_rgba(59,130,246,0.12)]"}`}
+            />
+            <div
+              className={`absolute inset-0 scale-[0.45] border-2 ${isDarkMode ? "border-red-400/12" : "border-red-400/6"} rounded-full animate-saturn-ring-13 ${isDarkMode ? "shadow-[0_0_25px_rgba(248,113,113,0.2)]" : "shadow-[0_0_15px_rgba(248,113,113,0.1)]"}`}
+            />
+            <div
+              className={`absolute inset-0 scale-[0.4] border-2 ${isDarkMode ? "border-white/10" : "border-gray-400/5"} rounded-full animate-saturn-ring-14 ${isDarkMode ? "shadow-[0_0_20px_rgba(255,255,255,0.12)]" : "shadow-[0_0_12px_rgba(0,0,0,0.06)]"}`}
+            />
+            <div
+              className={`absolute inset-0 scale-[0.35] border-3 ${isDarkMode ? "border-blue-400/15" : "border-blue-400/8"} rounded-full animate-saturn-ring-15 ${isDarkMode ? "shadow-[0_0_25px_rgba(96,165,250,0.2)]" : "shadow-[0_0_15px_rgba(96,165,250,0.1)]"}`}
+            />
+
+            {/* Innermost Core Ring */}
+            <div
+              className={`absolute inset-0 scale-[0.3] border-4 ${isDarkMode ? "border-red-600/20" : "border-red-600/12"} rounded-full animate-saturn-ring-18 ${isDarkMode ? "shadow-[0_0_40px_rgba(185,28,28,0.3),inset_0_0_20px_rgba(185,28,28,0.2)]" : "shadow-[0_0_25px_rgba(185,28,28,0.15),inset_0_0_12px_rgba(185,28,28,0.1)]"}`}
             />
           </div>
         </div>
@@ -331,37 +356,37 @@ export default function Portfolio() {
             <div className="hidden md:flex items-center space-x-8">
               <a
                 href="#home"
-                className={`${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-300 font-medium hover:scale-110 transform`}
+                className={`${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-150 font-medium hover:scale-105 transform`}
               >
                 Home
               </a>
               <a
                 href="#about"
-                className={`${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-300 font-medium hover:scale-110 transform`}
+                className={`${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-150 font-medium hover:scale-105 transform`}
               >
                 About
               </a>
               <a
                 href="#skills"
-                className={`${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-300 font-medium hover:scale-110 transform`}
+                className={`${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-150 font-medium hover:scale-105 transform`}
               >
                 Skills
               </a>
               <a
                 href="#certifications"
-                className={`${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-300 font-medium hover:scale-110 transform`}
+                className={`${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-150 font-medium hover:scale-105 transform`}
               >
                 Certifications
               </a>
               <a
                 href="#projects"
-                className={`${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-300 font-medium hover:scale-110 transform`}
+                className={`${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-150 font-medium hover:scale-105 transform`}
               >
                 Projects
               </a>
               <a
                 href="#contact"
-                className={`${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-300 font-medium hover:scale-110 transform`}
+                className={`${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-150 font-medium hover:scale-105 transform`}
               >
                 Contact
               </a>
@@ -369,7 +394,7 @@ export default function Portfolio() {
               {/* Dark Mode Toggle */}
               <button
                 onClick={toggleDarkMode}
-                className={`p-2 rounded-lg transition-all duration-300 ${isDarkMode ? "bg-gray-800/50 hover:bg-gray-700/50 text-yellow-400" : "bg-gray-200/50 hover:bg-gray-300/50 text-gray-700"}`}
+                className={`p-2 rounded-lg transition-all duration-150 ${isDarkMode ? "bg-gray-800/50 hover:bg-gray-700/50 text-yellow-400" : "bg-gray-200/50 hover:bg-gray-300/50 text-gray-700"}`}
                 aria-label="Toggle dark mode"
               >
                 {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
@@ -380,13 +405,13 @@ export default function Portfolio() {
             <div className="md:hidden flex items-center space-x-2">
               <button
                 onClick={toggleDarkMode}
-                className={`p-2 rounded-lg transition-all duration-300 ${isDarkMode ? "bg-gray-800/50 hover:bg-gray-700/50 text-yellow-400" : "bg-gray-200/50 hover:bg-gray-300/50 text-gray-700"}`}
+                className={`p-2 rounded-lg transition-all duration-150 ${isDarkMode ? "bg-gray-800/50 hover:bg-gray-700/50 text-yellow-400" : "bg-gray-200/50 hover:bg-gray-300/50 text-gray-700"}`}
                 aria-label="Toggle dark mode"
               >
                 {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
               </button>
               <button
-                className={`${isDarkMode ? "text-white" : "text-gray-900"} p-2 hover:bg-red-800/20 rounded-lg transition-all duration-300`}
+                className={`${isDarkMode ? "text-white" : "text-gray-900"} p-2 hover:bg-red-800/20 rounded-lg transition-all duration-150`}
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
               >
                 {isMenuOpen ? (
@@ -410,37 +435,37 @@ export default function Portfolio() {
               <div className="px-4 py-4 space-y-3">
                 <a
                   href="#home"
-                  className={`block ${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-300 font-medium hover:translate-x-2 transform`}
+                  className={`block ${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-150 font-medium hover:translate-x-2 transform`}
                 >
                   Home
                 </a>
                 <a
                   href="#about"
-                  className={`block ${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-300 font-medium hover:translate-x-2 transform`}
+                  className={`block ${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-150 font-medium hover:translate-x-2 transform`}
                 >
                   About
                 </a>
                 <a
                   href="#skills"
-                  className={`block ${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-300 font-medium hover:translate-x-2 transform`}
+                  className={`block ${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-150 font-medium hover:translate-x-2 transform`}
                 >
                   Skills
                 </a>
                 <a
                   href="#certifications"
-                  className={`block ${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-300 font-medium hover:translate-x-2 transform`}
+                  className={`block ${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-150 font-medium hover:translate-x-2 transform`}
                 >
                   Certifications
                 </a>
                 <a
                   href="#projects"
-                  className={`block ${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-300 font-medium hover:translate-x-2 transform`}
+                  className={`block ${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-150 font-medium hover:translate-x-2 transform`}
                 >
                   Projects
                 </a>
                 <a
                   href="#contact"
-                  className={`block ${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-300 font-medium hover:translate-x-2 transform`}
+                  className={`block ${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-150 font-medium hover:translate-x-2 transform`}
                 >
                   Contact
                 </a>
@@ -501,7 +526,7 @@ export default function Portfolio() {
                   <Button
                     onClick={handleDownloadCV}
                     size="lg"
-                    className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold px-8 py-6 rounded-lg transition-all duration-300 shadow-xl hover:shadow-red-500/30 transform hover:scale-105"
+                    className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold px-8 py-6 rounded-lg transition-all duration-150 shadow-xl hover:shadow-red-500/30 transform hover:scale-105"
                   >
                     <Download className="w-5 h-5 mr-2" />
                     Download Resume
@@ -509,7 +534,7 @@ export default function Portfolio() {
                   <Button
                     variant="outline"
                     size="lg"
-                    className={`${isDarkMode ? "border-red-500/50 text-red-400 hover:bg-red-500/20" : "border-red-500 text-red-600 hover:bg-red-50"} font-bold px-8 py-6 rounded-lg transition-all duration-300 transform hover:scale-105`}
+                    className={`${isDarkMode ? "border-red-500/50 text-red-400 hover:bg-red-500/20" : "border-red-500 text-red-600 hover:bg-red-50"} font-bold px-8 py-6 rounded-lg transition-all duration-150 transform hover:scale-105`}
                     onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
                   >
                     <Code className="w-5 h-5 mr-2" />
@@ -523,40 +548,40 @@ export default function Portfolio() {
                     href="https://github.com/VishalJha01"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-4 ${isDarkMode ? "bg-gray-800/50 hover:bg-gray-700/50" : "bg-gray-200/50 hover:bg-gray-300/50"} backdrop-blur-sm rounded-lg transition-all duration-300 transform hover:scale-110 group ${isDarkMode ? "border border-gray-700/50 hover:border-red-500/50" : "border border-gray-300/50 hover:border-red-500/50"}`}
+                    className={`p-4 ${isDarkMode ? "bg-gray-800/50 hover:bg-gray-700/50" : "bg-gray-200/50 hover:bg-gray-300/50"} backdrop-blur-sm rounded-lg transition-all duration-150 transform hover:scale-105 group ${isDarkMode ? "border border-gray-700/50 hover:border-red-500/50" : "border border-gray-300/50 hover:border-red-500/50"}`}
                     aria-label="GitHub Profile"
                   >
                     <Github
-                      className={`w-6 h-6 ${isDarkMode ? "text-gray-300 group-hover:text-red-400" : "text-gray-700 group-hover:text-red-600"} transition-colors duration-300`}
+                      className={`w-6 h-6 ${isDarkMode ? "text-gray-300 group-hover:text-red-400" : "text-gray-700 group-hover:text-red-600"} transition-colors duration-150`}
                     />
                   </a>
                   <a
                     href="https://www.linkedin.com/in/vishaljha1010"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`p-4 ${isDarkMode ? "bg-gray-800/50 hover:bg-gray-700/50" : "bg-gray-200/50 hover:bg-gray-300/50"} backdrop-blur-sm rounded-lg transition-all duration-300 transform hover:scale-110 group ${isDarkMode ? "border border-gray-700/50 hover:border-red-500/50" : "border border-gray-300/50 hover:border-red-500/50"}`}
+                    className={`p-4 ${isDarkMode ? "bg-gray-800/50 hover:bg-gray-700/50" : "bg-gray-200/50 hover:bg-gray-300/50"} backdrop-blur-sm rounded-lg transition-all duration-150 transform hover:scale-105 group ${isDarkMode ? "border border-gray-700/50 hover:border-red-500/50" : "border border-gray-300/50 hover:border-red-500/50"}`}
                     aria-label="LinkedIn Profile"
                   >
                     <Linkedin
-                      className={`w-6 h-6 ${isDarkMode ? "text-gray-300 group-hover:text-red-400" : "text-gray-700 group-hover:text-red-600"} transition-colors duration-300`}
+                      className={`w-6 h-6 ${isDarkMode ? "text-gray-300 group-hover:text-red-400" : "text-gray-700 group-hover:text-red-600"} transition-colors duration-150`}
                     />
                   </a>
                   <a
                     href="mailto:vishaljha055616@gmail.com"
-                    className={`p-4 ${isDarkMode ? "bg-gray-800/50 hover:bg-gray-700/50" : "bg-gray-200/50 hover:bg-gray-300/50"} backdrop-blur-sm rounded-lg transition-all duration-300 transform hover:scale-110 group ${isDarkMode ? "border border-gray-700/50 hover:border-red-500/50" : "border border-gray-300/50 hover:border-red-500/50"}`}
+                    className={`p-4 ${isDarkMode ? "bg-gray-800/50 hover:bg-gray-700/50" : "bg-gray-200/50 hover:bg-gray-300/50"} backdrop-blur-sm rounded-lg transition-all duration-150 transform hover:scale-105 group ${isDarkMode ? "border border-gray-700/50 hover:border-red-500/50" : "border border-gray-300/50 hover:border-red-500/50"}`}
                     aria-label="Email Contact"
                   >
                     <Mail
-                      className={`w-6 h-6 ${isDarkMode ? "text-gray-300 group-hover:text-red-400" : "text-gray-700 group-hover:text-red-600"} transition-colors duration-300`}
+                      className={`w-6 h-6 ${isDarkMode ? "text-gray-300 group-hover:text-red-400" : "text-gray-700 group-hover:text-red-600"} transition-colors duration-150`}
                     />
                   </a>
                   <a
                     href="tel:+918851072378"
-                    className={`p-4 ${isDarkMode ? "bg-gray-800/50 hover:bg-gray-700/50" : "bg-gray-200/50 hover:bg-gray-300/50"} backdrop-blur-sm rounded-lg transition-all duration-300 transform hover:scale-110 group ${isDarkMode ? "border border-gray-700/50 hover:border-red-500/50" : "border border-gray-300/50 hover:border-red-500/50"}`}
+                    className={`p-4 ${isDarkMode ? "bg-gray-800/50 hover:bg-gray-700/50" : "bg-gray-200/50 hover:bg-gray-300/50"} backdrop-blur-sm rounded-lg transition-all duration-150 transform hover:scale-105 group ${isDarkMode ? "border border-gray-700/50 hover:border-red-500/50" : "border border-gray-300/50 hover:border-red-500/50"}`}
                     aria-label="Phone Contact"
                   >
                     <Phone
-                      className={`w-6 h-6 ${isDarkMode ? "text-gray-300 group-hover:text-red-400" : "text-gray-700 group-hover:text-red-600"} transition-colors duration-300`}
+                      className={`w-6 h-6 ${isDarkMode ? "text-gray-300 group-hover:text-red-400" : "text-gray-700 group-hover:text-red-600"} transition-colors duration-150`}
                     />
                   </a>
                 </div>
@@ -623,7 +648,7 @@ export default function Portfolio() {
                   {aboutPoints.map((point, index) => (
                     <div
                       key={index}
-                      className={`flex items-start space-x-3 p-4 rounded-lg ${isDarkMode ? "bg-gray-900/30" : "bg-gray-100/50"} backdrop-blur-sm transition-all duration-300 hover:scale-105`}
+                      className={`flex items-start space-x-3 p-4 rounded-lg ${isDarkMode ? "bg-gray-900/30" : "bg-gray-100/50"} backdrop-blur-sm transition-all duration-150 hover:scale-105`}
                     >
                       <span className="text-2xl">{point.split(" ")[0]}</span>
                       <p className={`${isDarkMode ? "text-gray-300" : "text-gray-700"} leading-relaxed`}>
@@ -663,15 +688,15 @@ export default function Portfolio() {
               {skills.map((skill, index) => (
                 <div
                   key={skill.name}
-                  className={`scroll-animate group flex flex-col items-center p-6 transition-all duration-1000 hover:transform hover:scale-110 ${visibleElements.has(`skill-${index}`) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+                  className={`scroll-animate group flex flex-col items-center p-6 transition-all duration-1000 hover:transform hover:scale-105 ${visibleElements.has(`skill-${index}`) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
                   style={{ transitionDelay: `${index * 100}ms` }}
                   id={`skill-${index}`}
                 >
-                  <div className="text-6xl mb-4 group-hover:scale-125 transition-all duration-500 drop-shadow-lg group-hover:drop-shadow-2xl filter group-hover:brightness-110">
+                  <div className="text-6xl mb-4 group-hover:scale-110 transition-all duration-200 drop-shadow-lg group-hover:drop-shadow-2xl filter group-hover:brightness-110">
                     {skill.icon}
                   </div>
                   <h3
-                    className={`font-bold text-lg ${isDarkMode ? "text-gray-200 group-hover:text-red-400" : "text-gray-800 group-hover:text-red-600"} transition-colors duration-300 text-center drop-shadow-md`}
+                    className={`font-bold text-lg ${isDarkMode ? "text-gray-200 group-hover:text-red-400" : "text-gray-800 group-hover:text-red-600"} transition-colors duration-150 text-center drop-shadow-md`}
                   >
                     {skill.name}
                   </h3>
@@ -713,10 +738,10 @@ export default function Portfolio() {
                 >
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-3">
-                      <Award className="w-8 h-8 text-red-500 mt-1 flex-shrink-0 group-hover:scale-110 transition-all duration-300" />
+                      <Award className="w-8 h-8 text-red-500 mt-1 flex-shrink-0 group-hover:scale-110 transition-all duration-150" />
                       <div className="flex-1">
                         <h4
-                          className={`font-bold text-lg mb-2 ${isDarkMode ? "text-gray-200 group-hover:text-red-400" : "text-gray-800 group-hover:text-red-600"} transition-colors duration-300`}
+                          className={`font-bold text-lg mb-2 ${isDarkMode ? "text-gray-200 group-hover:text-red-400" : "text-gray-800 group-hover:text-red-600"} transition-colors duration-150`}
                         >
                           {cert.name}
                         </h4>
@@ -724,7 +749,7 @@ export default function Portfolio() {
                           {cert.issuer} • {cert.date}
                         </p>
                         <p
-                          className={`${isDarkMode ? "text-gray-400 group-hover:text-gray-300" : "text-gray-600 group-hover:text-gray-700"} text-sm leading-relaxed transition-colors duration-300`}
+                          className={`${isDarkMode ? "text-gray-400 group-hover:text-gray-300" : "text-gray-600 group-hover:text-gray-700"} text-sm leading-relaxed transition-colors duration-150`}
                         >
                           {cert.description}
                         </p>
@@ -776,17 +801,17 @@ export default function Portfolio() {
                       className="w-full h-full object-cover transition-all duration-700 group-hover:scale-110"
                     />
                     <div
-                      className={`absolute inset-0 ${isDarkMode ? "bg-gradient-to-t from-gray-900/80 to-transparent" : "bg-gradient-to-t from-white/80 to-transparent"} opacity-60 group-hover:opacity-40 transition-opacity duration-300`}
+                      className={`absolute inset-0 ${isDarkMode ? "bg-gradient-to-t from-gray-900/80 to-transparent" : "bg-gradient-to-t from-white/80 to-transparent"} opacity-60 group-hover:opacity-40 transition-opacity duration-150`}
                     />
                   </div>
                   <CardContent className="p-6">
                     <h3
-                      className={`font-bold text-xl mb-3 ${isDarkMode ? "text-gray-200 group-hover:text-red-400" : "text-gray-800 group-hover:text-red-600"} transition-colors duration-300`}
+                      className={`font-bold text-xl mb-3 ${isDarkMode ? "text-gray-200 group-hover:text-red-400" : "text-gray-800 group-hover:text-red-600"} transition-colors duration-150`}
                     >
                       {project.title}
                     </h3>
                     <p
-                      className={`${isDarkMode ? "text-gray-400 group-hover:text-gray-300" : "text-gray-600 group-hover:text-gray-700"} mb-4 leading-relaxed transition-colors duration-300`}
+                      className={`${isDarkMode ? "text-gray-400 group-hover:text-gray-300" : "text-gray-600 group-hover:text-gray-700"} mb-4 leading-relaxed transition-colors duration-150`}
                     >
                       {project.description}
                     </p>
@@ -794,7 +819,7 @@ export default function Portfolio() {
                       {project.tech.map((tech) => (
                         <span
                           key={tech}
-                          className={`px-3 py-1 ${isDarkMode ? "bg-red-900/30 text-red-300 border border-red-700/30 hover:bg-red-800/40 hover:border-red-500/50" : "bg-red-100/50 text-red-700 border border-red-200/50 hover:bg-red-200/50 hover:border-red-400/50"} rounded-lg text-sm transition-all duration-300`}
+                          className={`px-3 py-1 ${isDarkMode ? "bg-red-900/30 text-red-300 border border-red-700/30 hover:bg-red-800/40 hover:border-red-500/50" : "bg-red-100/50 text-red-700 border border-red-200/50 hover:bg-red-200/50 hover:border-red-400/50"} rounded-lg text-sm transition-all duration-150`}
                         >
                           {tech}
                         </span>
@@ -803,7 +828,7 @@ export default function Portfolio() {
                     <div className="flex gap-2">
                       <Button
                         variant="outline"
-                        className={`flex-1 ${isDarkMode ? "border-red-500/50 text-red-400 hover:bg-red-500/20 hover:border-red-400 hover:text-red-300" : "border-red-500/50 text-red-600 hover:bg-red-50 hover:border-red-500 hover:text-red-700"} transition-all duration-300 rounded-lg transform hover:scale-105`}
+                        className={`flex-1 ${isDarkMode ? "border-red-500/50 text-red-400 hover:bg-red-500/20 hover:border-red-400 hover:text-red-300" : "border-red-500/50 text-red-600 hover:bg-red-50 hover:border-red-500 hover:text-red-700"} transition-all duration-150 rounded-lg transform hover:scale-105`}
                         onClick={() => window.open(project.link, "_blank")}
                       >
                         <Github className="w-4 h-4 mr-2" />
@@ -811,7 +836,7 @@ export default function Portfolio() {
                       </Button>
                       {project.demo !== "#" && (
                         <Button
-                          className="flex-1 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white transition-all duration-300 rounded-lg transform hover:scale-105"
+                          className="flex-1 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white transition-all duration-150 rounded-lg transform hover:scale-105"
                           onClick={() => window.open(project.demo, "_blank")}
                         >
                           <ExternalLink className="w-4 h-4 mr-2" />
@@ -829,7 +854,7 @@ export default function Portfolio() {
               <Button
                 variant="outline"
                 size="lg"
-                className={`${isDarkMode ? "border-red-500/50 text-red-400 hover:bg-red-500/20" : "border-red-500 text-red-600 hover:bg-red-50"} font-bold px-8 py-4 rounded-lg transition-all duration-300 transform hover:scale-105`}
+                className={`${isDarkMode ? "border-red-500/50 text-red-400 hover:bg-red-500/20" : "border-red-500 text-red-600 hover:bg-red-50"} font-bold px-8 py-4 rounded-lg transition-all duration-150 transform hover:scale-105`}
                 onClick={() => window.open("https://github.com/VishalJha01", "_blank")}
               >
                 <Github className="w-5 h-5 mr-2" />
@@ -867,17 +892,17 @@ export default function Portfolio() {
             >
               {/* Phone */}
               <div
-                className={`group text-center p-6 ${isDarkMode ? "bg-gray-900/30 border border-gray-700/30 hover:border-red-500/50" : "bg-white/30 border border-gray-200/30 hover:border-red-500/50"} backdrop-blur-sm rounded-lg transition-all duration-300 ${isDarkMode ? "hover:bg-gray-800/40" : "hover:bg-white/50"}`}
+                className={`group text-center p-6 ${isDarkMode ? "bg-gray-900/30 border border-gray-700/30 hover:border-red-500/50" : "bg-white/30 border border-gray-200/30 hover:border-red-500/50"} backdrop-blur-sm rounded-lg transition-all duration-150 ${isDarkMode ? "hover:bg-gray-800/40" : "hover:bg-white/50"}`}
               >
-                <Phone className="w-8 h-8 text-red-500 mx-auto mb-3 group-hover:scale-110 transition-all duration-300" />
+                <Phone className="w-8 h-8 text-red-500 mx-auto mb-3 group-hover:scale-110 transition-all duration-150" />
                 <h3
-                  className={`font-bold text-lg mb-2 ${isDarkMode ? "text-gray-200 group-hover:text-red-400" : "text-gray-800 group-hover:text-red-600"} transition-colors duration-300`}
+                  className={`font-bold text-lg mb-2 ${isDarkMode ? "text-gray-200 group-hover:text-red-400" : "text-gray-800 group-hover:text-red-600"} transition-colors duration-150`}
                 >
                   Phone
                 </h3>
                 <a
                   href="tel:+918851072378"
-                  className={`${isDarkMode ? "text-gray-400 hover:text-gray-200" : "text-gray-600 hover:text-gray-800"} transition-colors duration-300`}
+                  className={`${isDarkMode ? "text-gray-400 hover:text-gray-200" : "text-gray-600 hover:text-gray-800"} transition-colors duration-150`}
                 >
                   +91 8851072378
                 </a>
@@ -885,17 +910,17 @@ export default function Portfolio() {
 
               {/* Email */}
               <div
-                className={`group text-center p-6 ${isDarkMode ? "bg-gray-900/30 border border-gray-700/30 hover:border-red-500/50" : "bg-white/30 border border-gray-200/30 hover:border-red-500/50"} backdrop-blur-sm rounded-lg transition-all duration-300 ${isDarkMode ? "hover:bg-gray-800/40" : "hover:bg-white/50"}`}
+                className={`group text-center p-6 ${isDarkMode ? "bg-gray-900/30 border border-gray-700/30 hover:border-red-500/50" : "bg-white/30 border border-gray-200/30 hover:border-red-500/50"} backdrop-blur-sm rounded-lg transition-all duration-150 ${isDarkMode ? "hover:bg-gray-800/40" : "hover:bg-white/50"}`}
               >
-                <Mail className="w-8 h-8 text-red-500 mx-auto mb-3 group-hover:scale-110 transition-all duration-300" />
+                <Mail className="w-8 h-8 text-red-500 mx-auto mb-3 group-hover:scale-110 transition-all duration-150" />
                 <h3
-                  className={`font-bold text-lg mb-2 ${isDarkMode ? "text-gray-200 group-hover:text-red-400" : "text-gray-800 group-hover:text-red-600"} transition-colors duration-300`}
+                  className={`font-bold text-lg mb-2 ${isDarkMode ? "text-gray-200 group-hover:text-red-400" : "text-gray-800 group-hover:text-red-600"} transition-colors duration-150`}
                 >
                   Email
                 </h3>
                 <a
                   href="mailto:vishaljha055616@gmail.com"
-                  className={`${isDarkMode ? "text-gray-400 hover:text-gray-200" : "text-gray-600 hover:text-gray-800"} transition-colors duration-300 text-sm break-all`}
+                  className={`${isDarkMode ? "text-gray-400 hover:text-gray-200" : "text-gray-600 hover:text-gray-800"} transition-colors duration-150 text-sm break-all`}
                 >
                   vishaljha055616@gmail.com
                 </a>
@@ -903,11 +928,11 @@ export default function Portfolio() {
 
               {/* Location */}
               <div
-                className={`group text-center p-6 ${isDarkMode ? "bg-gray-900/30 border border-gray-700/30 hover:border-red-500/50" : "bg-white/30 border border-gray-200/30 hover:border-red-500/50"} backdrop-blur-sm rounded-lg transition-all duration-300 ${isDarkMode ? "hover:bg-gray-800/40" : "hover:bg-white/50"}`}
+                className={`group text-center p-6 ${isDarkMode ? "bg-gray-900/30 border border-gray-700/30 hover:border-red-500/50" : "bg-white/30 border border-gray-200/30 hover:border-red-500/50"} backdrop-blur-sm rounded-lg transition-all duration-150 ${isDarkMode ? "hover:bg-gray-800/40" : "hover:bg-white/50"}`}
               >
-                <MapPin className="w-8 h-8 text-red-500 mx-auto mb-3 group-hover:scale-110 transition-all duration-300" />
+                <MapPin className="w-8 h-8 text-red-500 mx-auto mb-3 group-hover:scale-110 transition-all duration-150" />
                 <h3
-                  className={`font-bold text-lg mb-2 ${isDarkMode ? "text-gray-200 group-hover:text-red-400" : "text-gray-800 group-hover:text-red-600"} transition-colors duration-300`}
+                  className={`font-bold text-lg mb-2 ${isDarkMode ? "text-gray-200 group-hover:text-red-400" : "text-gray-800 group-hover:text-red-600"} transition-colors duration-150`}
                 >
                   Location
                 </h3>
@@ -919,7 +944,7 @@ export default function Portfolio() {
             <div className="text-center">
               <Button
                 size="lg"
-                className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold px-12 py-6 rounded-lg transition-all duration-300 shadow-xl hover:shadow-red-500/30 transform hover:scale-105"
+                className="bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold px-12 py-6 rounded-lg transition-all duration-150 shadow-xl hover:shadow-red-500/30 transform hover:scale-105"
                 onClick={() => window.open("mailto:vishaljha055616@gmail.com", "_blank")}
               >
                 <Mail className="w-5 h-5 mr-2" />
@@ -940,7 +965,7 @@ export default function Portfolio() {
                 href="https://github.com/VishalJha01"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`${isDarkMode ? "text-gray-400 hover:text-red-400" : "text-gray-600 hover:text-red-600"} transition-colors duration-300`}
+                className={`${isDarkMode ? "text-gray-400 hover:text-red-400" : "text-gray-600 hover:text-red-600"} transition-colors duration-150`}
                 aria-label="GitHub"
               >
                 <Github className="w-6 h-6" />
@@ -949,21 +974,21 @@ export default function Portfolio() {
                 href="https://www.linkedin.com/in/vishaljha1010"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`${isDarkMode ? "text-gray-400 hover:text-red-400" : "text-gray-600 hover:text-red-600"} transition-colors duration-300`}
+                className={`${isDarkMode ? "text-gray-400 hover:text-red-400" : "text-gray-600 hover:text-red-600"} transition-colors duration-150`}
                 aria-label="LinkedIn"
               >
                 <Linkedin className="w-6 h-6" />
               </a>
               <a
                 href="mailto:vishaljha055616@gmail.com"
-                className={`${isDarkMode ? "text-gray-400 hover:text-red-400" : "text-gray-600 hover:text-red-600"} transition-colors duration-300`}
+                className={`${isDarkMode ? "text-gray-400 hover:text-red-400" : "text-gray-600 hover:text-red-600"} transition-colors duration-150`}
                 aria-label="Email"
               >
                 <Mail className="w-6 h-6" />
               </a>
             </div>
             <p
-              className={`${isDarkMode ? "text-gray-500 hover:text-gray-400" : "text-gray-600 hover:text-gray-700"} transition-colors duration-300`}
+              className={`${isDarkMode ? "text-gray-500 hover:text-gray-400" : "text-gray-600 hover:text-gray-700"} transition-colors duration-150`}
             >
               © 2024 Vishal Jha. Crafted with passion for innovation.
             </p>
