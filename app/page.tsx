@@ -203,12 +203,12 @@ export default function Portfolio() {
   ]
 
   const aboutPoints = [
-    "🎓 BCA (Hons) student specializing in AI & Data Science at K.R. Mangalam University (GPA: 8.6/10)",
-    "🤖 Data Science enthusiast building ML models and predictive analytics solutions",
-    "🚀 Full-stack developer creating responsive web applications with modern frameworks",
-    "📊 Experienced in Python-based machine learning, deep learning, and statistical modeling",
-    "🌱 Passionate about solving real-world problems using AI and data-driven technologies",
-    "🔬 Proficient in data mining, feature engineering, and model deployment pipelines",
+    "🎓 BCA (Hons) student at K.R. Mangalam University with 8.6/10 GPA, training to become an AI & Data Science Engineer",
+    "💻 Full-stack developer building responsive web applications with modern frameworks and seamless user experiences",
+    "📊 Transforming raw data into actionable insights through statistical analysis, machine learning, and data visualization",
+    "🚀 Creating impactful applications that bridge the gap between complex data and real-world business solutions",
+    "🤖 Training in AI & Data Science engineering to develop intelligent systems and predictive analytics models",
+    "🔬 Passionate about turning innovative ideas into scalable applications that solve meaningful problems",
   ]
 
   const handleDownloadCV = () => {
@@ -510,10 +510,10 @@ export default function Portfolio() {
                   <p
                     className={`text-2xl md:text-3xl font-bold tracking-tight ${isDarkMode ? "text-gray-200" : "text-gray-800"} mb-2`}
                   >
-                    Full Stack Developer & Data Scientist
+                    Full Stack Developer | AI & Data Science Engineer in Training
                   </p>
                   <p className={`text-lg md:text-xl font-medium ${isDarkMode ? "text-red-400" : "text-red-600"} mb-4`}>
-                    BCA (Hons) AI & Data Science Student | ML Engineer | Problem Solver
+                    Turning data into insights & ideas into impactful applications.
                   </p>
                   <div className={`flex items-center space-x-2 ${isDarkMode ? "text-gray-400" : "text-gray-600"}`}>
                     <MapPin className="w-4 h-4 text-red-500" />
@@ -632,7 +632,7 @@ export default function Portfolio() {
                 ABOUT ME
               </h2>
               <p className={`text-xl ${isDarkMode ? "text-gray-400" : "text-gray-600"} max-w-2xl mx-auto`}>
-                Passionate data scientist and full-stack developer creating AI-powered solutions
+                Turning data into insights & ideas into impactful applications
               </p>
             </div>
 
