@@ -133,8 +133,8 @@ export default function Portfolio() {
       description:
         "Sustainable e-commerce platform with intelligent product recommendation system, environmental impact analytics, and responsive design. Integrated ML-based user behavior analysis.",
       tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "Flask", "Machine Learning"],
-      link: "https://github.com/VishalJha01/wecofy-eco-ecommerce",
-      demo: "https://wecofy.vercel.app",
+      link: "https://github.com/VishalJha01/Wecofy-E-commerce-website",
+      demo: "https://wecofy-website.vercel.app",
       image: "/projects/wecofy-ecommerce.png",
     },
     {
@@ -142,18 +142,18 @@ export default function Portfolio() {
       description:
         "Modern responsive website with appointment prediction system and patient analytics dashboard. Features optimized UI/UX and data-driven insights for clinic management.",
       tech: ["HTML5", "CSS3", "JavaScript", "Tailwind CSS", "Data Analytics"],
-      link: "https://github.com/VishalJha01/dr-dubey-dental-clinic",
-      demo: "https://dr-dubey-dental.vercel.app",
+      link: "https://github.com/VishalJha01/Dr.-Dubey-Dental-Clinic",
+      demo: "https://dr-dubey-dental-clinic.vercel.app",
       image: "/projects/dr-dubey-dental.png",
     },
     {
-      title: "AQI Forecasting - Data Science Project",
+      title: "AeroPulse AQI.AI - Smart Air Quality Prediction",
       description:
-        "Advanced machine learning model predicting Air Quality Index for Sohna region with 85%+ accuracy. Implemented time series analysis, feature engineering, and ensemble methods.",
-      tech: ["Python", "Pandas", "NumPy", "Scikit-learn", "Matplotlib", "Seaborn", "Time Series"],
-      link: "https://github.com/VishalJha01/data-wizards-aqi-forecasting",
-      demo: "#",
-      image: "/placeholder.svg?height=300&width=400",
+        "AI-powered air quality prediction platform using machine learning models to forecast AQI levels. Features real-time data visualization, interactive dashboards, and predictive analytics for environmental monitoring.",
+      tech: ["Python", "Pandas", "NumPy", "Scikit-learn", "Streamlit", "Machine Learning"],
+      link: "https://github.com/VishalJha01/Aeropulse-aqi.AI",
+      demo: "https://aeropulse-aqi-ai.streamlit.app",
+      image: "/projects/aeropulse.png",
     },
   ]
 
