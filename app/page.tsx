@@ -453,7 +453,7 @@ export default function Portfolio() {
       {/* Content */}
       <div className="relative z-10 pt-16">
         {/* Hero Section */}
-        <section id="home" className="container mx-auto px-4 py-16">
+        <section id="home" className="container mx-auto px-4 py-12">
           <div className="max-w-7xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-start">
               {/* Left side - Name and Content */}
@@ -591,14 +591,14 @@ export default function Portfolio() {
 
         {/* Section Divider */}
         <div
-          className={`w-full h-px ${isDarkMode ? "bg-gradient-to-r from-transparent via-red-500/30 to-transparent" : "bg-gradient-to-r from-transparent via-red-500/20 to-transparent"} my-16`}
+          className={`w-full h-px ${isDarkMode ? "bg-gradient-to-r from-transparent via-red-500/30 to-transparent" : "bg-gradient-to-r from-transparent via-red-500/20 to-transparent"} my-8`}
         />
 
         {/* About Section */}
-        <section id="about" className="container mx-auto px-4 py-16">
+        <section id="about" className="container mx-auto px-4 py-12">
           <div className="max-w-4xl mx-auto">
             <div
-              className={`scroll-animate text-center mb-16 transition-all duration-1000 ${visibleElements.has("about-title") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+              className={`scroll-animate text-center mb-12 transition-all duration-1000 ${visibleElements.has("about-title") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
               id="about-title"
             >
               <h2
@@ -639,14 +639,14 @@ export default function Portfolio() {
 
         {/* Section Divider */}
         <div
-          className={`w-full h-px ${isDarkMode ? "bg-gradient-to-r from-transparent via-red-500/30 to-transparent" : "bg-gradient-to-r from-transparent via-red-500/20 to-transparent"} my-16`}
+          className={`w-full h-px ${isDarkMode ? "bg-gradient-to-r from-transparent via-red-500/30 to-transparent" : "bg-gradient-to-r from-transparent via-red-500/20 to-transparent"} my-8`}
         />
 
         {/* Skills Section */}
-        <section id="skills" className="container mx-auto px-4 py-16">
+        <section id="skills" className="container mx-auto px-4 py-12">
           <div className="max-w-6xl mx-auto">
             <div
-              className={`scroll-animate text-center mb-16 transition-all duration-1000 ${visibleElements.has("skills-title") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+              className={`scroll-animate text-center mb-12 transition-all duration-1000 ${visibleElements.has("skills-title") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
               id="skills-title"
             >
               <h2
@@ -683,14 +683,14 @@ export default function Portfolio() {
 
         {/* Section Divider */}
         <div
-          className={`w-full h-px ${isDarkMode ? "bg-gradient-to-r from-transparent via-red-500/30 to-transparent" : "bg-gradient-to-r from-transparent via-red-500/20 to-transparent"} my-16`}
+          className={`w-full h-px ${isDarkMode ? "bg-gradient-to-r from-transparent via-red-500/30 to-transparent" : "bg-gradient-to-r from-transparent via-red-500/20 to-transparent"} my-8`}
         />
 
         {/* Certifications Section */}
-        <section id="certifications" className="container mx-auto px-4 py-16">
+        <section id="certifications" className="container mx-auto px-4 py-12">
           <div className="max-w-6xl mx-auto">
             <div
-              className={`scroll-animate text-center mb-16 transition-all duration-1000 ${visibleElements.has("certifications-title") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+              className={`scroll-animate text-center mb-12 transition-all duration-1000 ${visibleElements.has("certifications-title") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
               id="certifications-title"
             >
               <h2
@@ -739,14 +739,14 @@ export default function Portfolio() {
 
         {/* Section Divider */}
         <div
-          className={`w-full h-px ${isDarkMode ? "bg-gradient-to-r from-transparent via-red-500/30 to-transparent" : "bg-gradient-to-r from-transparent via-red-500/20 to-transparent"} my-16`}
+          className={`w-full h-px ${isDarkMode ? "bg-gradient-to-r from-transparent via-red-500/30 to-transparent" : "bg-gradient-to-r from-transparent via-red-500/20 to-transparent"} my-8`}
         />
 
         {/* Projects Section */}
-        <section id="projects" className="container mx-auto px-4 py-16">
+        <section id="projects" className="container mx-auto px-4 py-12">
           <div className="max-w-6xl mx-auto">
             <div
-              className={`scroll-animate text-center mb-16 transition-all duration-1000 ${visibleElements.has("projects-title") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+              className={`scroll-animate text-center mb-12 transition-all duration-1000 ${visibleElements.has("projects-title") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
               id="projects-title"
             >
               <h2
@@ -841,14 +841,14 @@ export default function Portfolio() {
 
         {/* Section Divider */}
         <div
-          className={`w-full h-px ${isDarkMode ? "bg-gradient-to-r from-transparent via-red-500/30 to-transparent" : "bg-gradient-to-r from-transparent via-red-500/20 to-transparent"} my-16`}
+          className={`w-full h-px ${isDarkMode ? "bg-gradient-to-r from-transparent via-red-500/30 to-transparent" : "bg-gradient-to-r from-transparent via-red-500/20 to-transparent"} my-8`}
         />
 
         {/* Contact Section */}
-        <section id="contact" className="container mx-auto px-4 py-16">
+        <section id="contact" className="container mx-auto px-4 py-12">
           <div className="max-w-4xl mx-auto">
             <div
-              className={`scroll-animate text-center mb-12 transition-all duration-1000 ${visibleElements.has("contact-title") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+              className={`scroll-animate text-center mb-8 transition-all duration-1000 ${visibleElements.has("contact-title") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
               id="contact-title"
             >
               <h2
@@ -862,7 +862,7 @@ export default function Portfolio() {
             </div>
 
             <div
-              className={`scroll-animate grid md:grid-cols-3 gap-6 mb-12 transition-all duration-1000 ${visibleElements.has("contact-items") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+              className={`scroll-animate grid md:grid-cols-3 gap-6 mb-8 transition-all duration-1000 ${visibleElements.has("contact-items") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
               id="contact-items"
             >
               {/* Phone */}
