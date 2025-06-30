@@ -1110,7 +1110,7 @@ const skillCategories = useMemo(
             <p
               className={`${isDarkMode ? "text-gray-500 hover:text-gray-400" : "text-gray-600 hover:text-gray-700"} transition-colors duration-150`}
             >
-              © 2024 Vishal Jha. Crafted with passion for innovation.
+             © 2025 Vishal Jha. Built with curiosity and code.
             </p>
           </div>
         </footer>
