@@ -223,7 +223,7 @@ export default function Portfolio() {
         tech: ["Python", "Pandas", "NumPy", "Scikit-learn", "Streamlit", "Machine Learning"],
         link: "https://github.com/VishalJha01/Aeropulse-aqi.AI",
         demo: "https://aeropulse-aqi-ai.streamlit.app",
-        image: "/placeholder.svg?height=300&width=400&text=AeroPulse+AQI.AI",
+        image: "/projects/aeropulse.png",
       },
     ],
     [],
@@ -412,16 +412,16 @@ export default function Portfolio() {
                 Skills
               </a>
               <a
-                href="#certifications"
-                className={`${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-150 font-medium hover:scale-105 transform`}
-              >
-                Certifications
-              </a>
-              <a
                 href="#projects"
                 className={`${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-150 font-medium hover:scale-105 transform`}
               >
                 Projects
+              </a>
+              <a
+                href="#certifications"
+                className={`${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-150 font-medium hover:scale-105 transform`}
+              >
+                Certifications
               </a>
               <a
                 href="#contact"
@@ -494,18 +494,18 @@ export default function Portfolio() {
                   Skills
                 </a>
                 <a
-                  href="#certifications"
-                  className={`block ${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-150 font-medium hover:translate-x-2 transform`}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  Certifications
-                </a>
-                <a
                   href="#projects"
                   className={`block ${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-150 font-medium hover:translate-x-2 transform`}
                   onClick={() => setIsMenuOpen(false)}
                 >
                   Projects
+                </a>
+                <a
+                  href="#certifications"
+                  className={`block ${isDarkMode ? "text-gray-300 hover:text-red-400" : "text-gray-700 hover:text-red-600"} transition-all duration-150 font-medium hover:translate-x-2 transform`}
+                  onClick={() => setIsMenuOpen(false)}
+                >
+                  Certifications
                 </a>
                 <a
                   href="#contact"
@@ -761,64 +761,6 @@ export default function Portfolio() {
           className={`w-full h-px ${isDarkMode ? "bg-gradient-to-r from-transparent via-red-500/30 to-transparent" : "bg-gradient-to-r from-transparent via-red-500/20 to-transparent"} my-8`}
         />
 
-        {/* Certifications Section */}
-        <section id="certifications" className="container mx-auto px-4 py-12">
-          <div className="max-w-6xl mx-auto">
-            <div
-              className={`${isMobile ? "scroll-animate-essential" : "scroll-animate"} text-center mb-12 transition-all duration-1000 ${visibleElements.has("certifications-title") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
-              id="certifications-title"
-            >
-              <h2
-                className={`text-5xl md:text-6xl font-black leading-tight tracking-tight mb-6 ${isDarkMode ? "text-red-500" : "text-red-600"}`}
-              >
-                CERTIFICATIONS
-              </h2>
-              <p className={`text-xl ${isDarkMode ? "text-gray-400" : "text-gray-600"} max-w-2xl mx-auto`}>
-                Data science and development certifications showcasing expertise growth
-              </p>
-            </div>
-
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {certifications.map((cert, index) => (
-                <Card
-                  key={index}
-                  className={`${isMobile ? "scroll-animate-essential" : "scroll-animate"} group ${isDarkMode ? "bg-gray-900/50 border-gray-700/50 hover:border-red-500/70" : "bg-white/50 border-gray-200/50 hover:border-red-500/50"} backdrop-blur-sm transition-all duration-1000 ${!isMobile ? "hover:transform hover:scale-105" : ""} shadow-xl ${isDarkMode ? "hover:shadow-red-500/20" : "hover:shadow-red-500/10"} rounded-lg ${isDarkMode ? "hover:bg-gray-800/50" : "hover:bg-white/70"} ${visibleElements.has(`cert-${index}`) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
-                  style={{ transitionDelay: `${index * (isMobile ? 100 : 150)}ms` }}
-                  id={`cert-${index}`}
-                >
-                  <CardContent className="p-6">
-                    <div className="flex items-start space-x-3">
-                      <Award
-                        className={`w-8 h-8 text-red-500 mt-1 flex-shrink-0 ${!isMobile ? "group-hover:scale-110" : ""} transition-all duration-150`}
-                      />
-                      <div className="flex-1">
-                        <h4
-                          className={`font-bold text-lg mb-2 ${isDarkMode ? "text-gray-200 group-hover:text-red-400" : "text-gray-800 group-hover:text-red-600"} transition-colors duration-150`}
-                        >
-                          {cert.name}
-                        </h4>
-                        <p className={`${isDarkMode ? "text-red-400" : "text-red-600"} font-medium mb-2`}>
-                          {cert.issuer} • {cert.date}
-                        </p>
-                        <p
-                          className={`${isDarkMode ? "text-gray-400 group-hover:text-gray-300" : "text-gray-600 group-hover:text-gray-700"} text-sm leading-relaxed transition-colors duration-150`}
-                        >
-                          {cert.description}
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* Section Divider */}
-        <div
-          className={`w-full h-px ${isDarkMode ? "bg-gradient-to-r from-transparent via-red-500/30 to-transparent" : "bg-gradient-to-r from-transparent via-red-500/20 to-transparent"} my-8`}
-        />
-
         {/* Projects Section */}
         <section id="projects" className="container mx-auto px-4 py-12">
           <div className="max-w-6xl mx-auto">
@@ -916,6 +858,64 @@ export default function Portfolio() {
                 <Github className="w-5 h-5 mr-2" />
                 View All Projects on GitHub
               </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Section Divider */}
+        <div
+          className={`w-full h-px ${isDarkMode ? "bg-gradient-to-r from-transparent via-red-500/30 to-transparent" : "bg-gradient-to-r from-transparent via-red-500/20 to-transparent"} my-8`}
+        />
+
+        {/* Certifications Section */}
+        <section id="certifications" className="container mx-auto px-4 py-12">
+          <div className="max-w-6xl mx-auto">
+            <div
+              className={`${isMobile ? "scroll-animate-essential" : "scroll-animate"} text-center mb-12 transition-all duration-1000 ${visibleElements.has("certifications-title") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+              id="certifications-title"
+            >
+              <h2
+                className={`text-5xl md:text-6xl font-black leading-tight tracking-tight mb-6 ${isDarkMode ? "text-red-500" : "text-red-600"}`}
+              >
+                CERTIFICATIONS
+              </h2>
+              <p className={`text-xl ${isDarkMode ? "text-gray-400" : "text-gray-600"} max-w-2xl mx-auto`}>
+                Data science and development certifications showcasing expertise growth
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {certifications.map((cert, index) => (
+                <Card
+                  key={index}
+                  className={`${isMobile ? "scroll-animate-essential" : "scroll-animate"} group ${isDarkMode ? "bg-gray-900/50 border-gray-700/50 hover:border-red-500/70" : "bg-white/50 border-gray-200/50 hover:border-red-500/50"} backdrop-blur-sm transition-all duration-1000 ${!isMobile ? "hover:transform hover:scale-105" : ""} shadow-xl ${isDarkMode ? "hover:shadow-red-500/20" : "hover:shadow-red-500/10"} rounded-lg ${isDarkMode ? "hover:bg-gray-800/50" : "hover:bg-white/70"} ${visibleElements.has(`cert-${index}`) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+                  style={{ transitionDelay: `${index * (isMobile ? 100 : 150)}ms` }}
+                  id={`cert-${index}`}
+                >
+                  <CardContent className="p-6">
+                    <div className="flex items-start space-x-3">
+                      <Award
+                        className={`w-8 h-8 text-red-500 mt-1 flex-shrink-0 ${!isMobile ? "group-hover:scale-110" : ""} transition-all duration-150`}
+                      />
+                      <div className="flex-1">
+                        <h4
+                          className={`font-bold text-lg mb-2 ${isDarkMode ? "text-gray-200 group-hover:text-red-400" : "text-gray-800 group-hover:text-red-600"} transition-colors duration-150`}
+                        >
+                          {cert.name}
+                        </h4>
+                        <p className={`${isDarkMode ? "text-red-400" : "text-red-600"} font-medium mb-2`}>
+                          {cert.issuer} • {cert.date}
+                        </p>
+                        <p
+                          className={`${isDarkMode ? "text-gray-400 group-hover:text-gray-300" : "text-gray-600 group-hover:text-gray-700"} text-sm leading-relaxed transition-colors duration-150`}
+                        >
+                          {cert.description}
+                        </p>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              ))}
             </div>
           </div>
         </section>
