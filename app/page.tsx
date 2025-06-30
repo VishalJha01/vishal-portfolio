@@ -199,13 +199,13 @@ export default function Portfolio() {
   const projects = useMemo(
     () => [
       {
-        title: "Wecofy - Eco-Friendly E-commerce",
+        title: "AeroPulse AQI.AI - Smart Air Quality Prediction",
         description:
-          "Sustainable e-commerce platform with intelligent product recommendation system, environmental impact analytics, and responsive design. Integrated ML-based user behavior analysis.",
-        tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "Flask", "Machine Learning"],
-        link: "https://github.com/VishalJha01/Wecofy-E-commerce-website",
-        demo: "https://wecofy-website.vercel.app",
-        image: "/projects/wecofy-ecommerce.png",
+          "AI-powered air quality prediction platform using machine learning models to forecast AQI levels. Features real-time data visualization, interactive dashboards, and predictive analytics for environmental monitoring.",
+        tech: ["Python", "Pandas", "NumPy", "Scikit-learn", "Streamlit", "Machine Learning"],
+        link: "https://github.com/VishalJha01/Aeropulse-aqi.AI",
+        demo: "https://aeropulse-aqi-ai.streamlit.app",
+        image: "/projects/aeropulse.png",
       },
       {
         title: "Dr. Dubey Dental Clinic",
@@ -217,13 +217,13 @@ export default function Portfolio() {
         image: "/projects/dr-dubey-dental.png",
       },
       {
-        title: "AeroPulse AQI.AI - Smart Air Quality Prediction",
+        title: "Wecofy - Eco-Friendly E-commerce",
         description:
-          "AI-powered air quality prediction platform using machine learning models to forecast AQI levels. Features real-time data visualization, interactive dashboards, and predictive analytics for environmental monitoring.",
-        tech: ["Python", "Pandas", "NumPy", "Scikit-learn", "Streamlit", "Machine Learning"],
-        link: "https://github.com/VishalJha01/Aeropulse-aqi.AI",
-        demo: "https://aeropulse-aqi-ai.streamlit.app",
-        image: "/projects/aeropulse.png",
+          "Sustainable e-commerce platform with intelligent product recommendation system, environmental impact analytics, and responsive design. Integrated ML-based user behavior analysis.",
+        tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "Flask", "Machine Learning"],
+        link: "https://github.com/VishalJha01/Wecofy-E-commerce-website",
+        demo: "https://wecofy-website.vercel.app",
+        image: "/projects/wecofy-ecommerce.png",
       },
     ],
     [],
@@ -370,25 +370,34 @@ export default function Portfolio() {
           <div className="flex items-center justify-between h-16">
             {/* Professional VJ Logo */}
             <div className="flex items-center space-x-4">
-              <div className="relative flex items-center justify-center">
-                <div className="text-4xl font-black tracking-tighter">
-                  <span
-                    className={`bg-gradient-to-br from-white via-red-500 to-blue-900 bg-clip-text text-transparent ${!isMobile ? "animate-gradient-logo" : ""} transform -skew-x-12 inline-block`}
-                  >
-                    V
-                  </span>
-                  <span
-                    className={`bg-gradient-to-br from-blue-900 via-red-500 to-white bg-clip-text text-transparent ${!isMobile ? "animate-gradient-logo" : ""} transform skew-x-12 inline-block -ml-2`}
-                  >
-                    J
-                  </span>
-                </div>
-              </div>
-              <span
-                className={`${isDarkMode ? "text-white" : "text-gray-900"} font-black text-xl tracking-wider ${!isMobile ? "animate-gradient-text" : ""} bg-gradient-to-r from-red-600 via-red-400 to-blue-600 bg-clip-text text-transparent`}
+              <button
+                onClick={() => {
+                  window.scrollTo({ top: 0, behavior: "smooth" })
+                  // Optional: Also refresh the page
+                  // window.location.reload()
+                }}
+                className="flex items-center space-x-4 cursor-pointer hover:opacity-80 transition-opacity duration-150"
               >
-                ℙ𝕆ℝ𝕋𝔽𝕆𝕃𝕀𝕆
-              </span>
+                <div className="relative flex items-center justify-center">
+                  <div className="text-4xl font-black tracking-tighter">
+                    <span
+                      className={`bg-gradient-to-br from-white via-red-500 to-blue-900 bg-clip-text text-transparent ${!isMobile ? "animate-gradient-logo" : ""} transform -skew-x-12 inline-block`}
+                    >
+                      V
+                    </span>
+                    <span
+                      className={`bg-gradient-to-br from-blue-900 via-red-500 to-white bg-clip-text text-transparent ${!isMobile ? "animate-gradient-logo" : ""} transform skew-x-12 inline-block -ml-2`}
+                    >
+                      J
+                    </span>
+                  </div>
+                </div>
+                <span
+                  className={`${isDarkMode ? "text-white" : "text-gray-900"} font-black text-xl tracking-wider ${!isMobile ? "animate-gradient-text" : ""} bg-gradient-to-r from-red-600 via-red-400 to-blue-600 bg-clip-text text-transparent`}
+                >
+                  ℙ𝕆ℝ𝕋𝔽𝕆𝕃𝕀𝕆
+                </span>
+              </button>
             </div>
 
             {/* Desktop Navigation */}
