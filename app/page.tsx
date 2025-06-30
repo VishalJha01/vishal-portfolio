@@ -9,20 +9,24 @@ import { useState, useEffect, useRef, useCallback, useMemo } from "react"
 // Mobile detection hook
 const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState(false)
+
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768 || "ontouchstart" in window)
     }
+
     checkMobile()
     window.addEventListener("resize", checkMobile)
     return () => window.removeEventListener("resize", checkMobile)
   }, [])
+
   return isMobile
 }
 
 // Throttle hook for performance
 const useThrottle = (callback: Function, delay: number) => {
   const lastRun = useRef(Date.now())
+
   return useCallback(
     (...args: any[]) => {
       if (Date.now() - lastRun.current >= delay) {
@@ -41,6 +45,7 @@ export default function Portfolio() {
   const [isTyping, setIsTyping] = useState(false)
   const [visibleElements, setVisibleElements] = useState(new Set())
   const [isDarkMode, setIsDarkMode] = useState(true)
+
   const isMobile = useIsMobile()
   const fullName = "VISHAL JHA"
   const observerRef = useRef<IntersectionObserver | null>(null)
@@ -90,6 +95,7 @@ export default function Portfolio() {
     // Only observe essential elements on mobile
     const selector = isMobile ? ".scroll-animate-essential" : ".scroll-animate"
     const elements = document.querySelectorAll(selector)
+
     elements.forEach((el) => {
       if (observerRef.current && el.id) {
         observerRef.current.observe(el)
@@ -249,51 +255,46 @@ const skillCategories = useMemo(
   const certifications = useMemo(
     () => [
       {
-        name: "Big Data Engineer",
-        issuer: "IBM",
-        date: "2024",
-        description: "Comprehensive training in big data technologies, data processing, and analytics using IBM tools and frameworks",
-        link: "https://courses.ibmcep.cognitiveclass.ai/certificates/16f0775fbfdd4d04930c842ebb3322c9"
-      },
-      {
-        name: "Google Analytics",
-        issuer: "Google Skillshop",
-        date: "2024",
-        description: "Advanced web analytics, data interpretation, and digital marketing insights using Google Analytics platform",
-        link: "https://skillshop.credential.net/d8f7c987-e8a4-48a7-8359-f0ac8f9987cf#acc.jfxneocm"
-      },
-      {
-        name: "Analyzing and Visualizing Data with Microsoft Power BI",
-        issuer: "Trainity",
-        date: "2024",
-        description: "Business intelligence and data visualization using Power BI for creating interactive dashboards and reports"
-      },
-      {
         name: "Fundamentals of Generative AI",
         issuer: "Microsoft",
         date: "2024",
         description: "Core concepts and applications of generative AI and large language models",
-        link: "https://learn.microsoft.com/en-in/users/vishaljha-4188/achievements/8rgxtjzw?ref=https%3A%2F%2Fwww.linkedin.com%2F"
       },
       {
-        name: "Get Data with Power BI",
-        issuer: "Microsoft",
+        name: "Machine Learning Specialization",
+        issuer: "Stanford/Coursera",
         date: "2024",
-        description: "Data extraction, transformation, and loading techniques using Microsoft Power BI platform",
-        link: "https://learn.microsoft.com/en-in/users/vishaljha-4188/achievements/4s7qvfck?ref=https%3A%2F%2Fwww.linkedin.com%2F"
+        description: "Comprehensive ML algorithms, supervised and unsupervised learning techniques",
       },
       {
-        name: "Front End Development - CSS",
+        name: "Data Science with Python",
+        issuer: "IBM",
+        date: "2023",
+        description: "Python programming for data science using Pandas, NumPy, and ML libraries",
+      },
+      {
+        name: "Deep Learning Fundamentals",
+        issuer: "Google",
+        date: "2024",
+        description: "Neural networks, TensorFlow, and deep learning model development",
+      },
+      {
+        name: "MySQL & Database Systems",
+        issuer: "Trainity",
+        date: "2024",
+        description: "Database design, optimization, and data warehousing for ML applications",
+      },
+      {
+        name: "Statistical Analysis & Modeling",
+        issuer: "Be10x",
+        date: "2024",
+        description: "Advanced statistics, hypothesis testing, and predictive modeling",
+      },
+      {
+        name: "Frontend Development (React)",
         issuer: "Great Learning",
         date: "2024",
-        description: "Advanced CSS techniques, responsive design, and modern frontend development practices"
-      },
-      {
-        name: "Data Analysis with Python",
-        issuer: "IBM Developer Skills Network",
-        date: "2024",
-        description: "Python programming for data science using Pandas, NumPy, and statistical analysis libraries",
-        link: "https://courses.cognitiveclass.ai/certificates/225ef2beb322422295a9cfdb13275ba5"
+        description: "Modern React development and full-stack web application deployment",
       },
     ],
     [],
@@ -317,6 +318,7 @@ const skillCategories = useMemo(
     anchor.href = pdfUrl
     anchor.download = "Vishal_Jha_Resume.pdf"
     anchor.target = "_blank"
+
     try {
       document.body.appendChild(anchor)
       anchor.click()
@@ -459,6 +461,7 @@ const skillCategories = useMemo(
               >
                 Contact
               </a>
+
               {/* Dark Mode Toggle */}
               <button
                 onClick={toggleDarkMode}
@@ -935,7 +938,7 @@ const skillCategories = useMemo(
                 CERTIFICATIONS
               </h2>
               <p className={`text-xl ${isDarkMode ? "text-gray-400" : "text-gray-600"} max-w-2xl mx-auto`}>
-                Professional certifications showcasing expertise in data science, AI, and development
+                Data science and development certifications showcasing expertise growth
               </p>
             </div>
 
@@ -943,10 +946,9 @@ const skillCategories = useMemo(
               {certifications.map((cert, index) => (
                 <Card
                   key={index}
-                  className={`${isMobile ? "scroll-animate-essential" : "scroll-animate"} group ${isDarkMode ? "bg-gray-900/50 border-gray-700/50 hover:border-red-500/70" : "bg-white/50 border-gray-200/50 hover:border-red-500/50"} backdrop-blur-sm transition-all duration-1000 ${!isMobile ? "hover:transform hover:scale-105" : ""} shadow-xl ${isDarkMode ? "hover:shadow-red-500/20" : "hover:shadow-red-500/10"} rounded-lg ${isDarkMode ? "hover:bg-gray-800/50" : "hover:bg-white/70"} ${visibleElements.has(`cert-${index}`) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"} ${cert.link ? "cursor-pointer" : ""}`}
+                  className={`${isMobile ? "scroll-animate-essential" : "scroll-animate"} group ${isDarkMode ? "bg-gray-900/50 border-gray-700/50 hover:border-red-500/70" : "bg-white/50 border-gray-200/50 hover:border-red-500/50"} backdrop-blur-sm transition-all duration-1000 ${!isMobile ? "hover:transform hover:scale-105" : ""} shadow-xl ${isDarkMode ? "hover:shadow-red-500/20" : "hover:shadow-red-500/10"} rounded-lg ${isDarkMode ? "hover:bg-gray-800/50" : "hover:bg-white/70"} ${visibleElements.has(`cert-${index}`) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
                   style={{ transitionDelay: `${index * (isMobile ? 100 : 150)}ms` }}
                   id={`cert-${index}`}
-                  onClick={() => cert.link && window.open(cert.link, "_blank")}
                 >
                   <CardContent className="p-6">
                     <div className="flex items-start space-x-3">
@@ -954,18 +956,11 @@ const skillCategories = useMemo(
                         className={`w-8 h-8 text-red-500 mt-1 flex-shrink-0 ${!isMobile ? "group-hover:scale-110" : ""} transition-all duration-150`}
                       />
                       <div className="flex-1">
-                        <div className="flex items-start justify-between mb-2">
-                          <h4
-                            className={`font-bold text-lg ${isDarkMode ? "text-gray-200 group-hover:text-red-400" : "text-gray-800 group-hover:text-red-600"} transition-colors duration-150 leading-tight`}
-                          >
-                            {cert.name}
-                          </h4>
-                          {cert.link && (
-                            <ExternalLink
-                              className={`w-4 h-4 ml-2 flex-shrink-0 ${isDarkMode ? "text-gray-400 group-hover:text-red-400" : "text-gray-600 group-hover:text-red-600"} transition-colors duration-150`}
-                            />
-                          )}
-                        </div>
+                        <h4
+                          className={`font-bold text-lg mb-2 ${isDarkMode ? "text-gray-200 group-hover:text-red-400" : "text-gray-800 group-hover:text-red-600"} transition-colors duration-150`}
+                        >
+                          {cert.name}
+                        </h4>
                         <p className={`${isDarkMode ? "text-red-400" : "text-red-600"} font-medium mb-2`}>
                           {cert.issuer} • {cert.date}
                         </p>
@@ -974,16 +969,6 @@ const skillCategories = useMemo(
                         >
                           {cert.description}
                         </p>
-                        {cert.link && (
-                          <div className="mt-3">
-                            <span
-                              className={`inline-flex items-center text-xs ${isDarkMode ? "text-red-400 group-hover:text-red-300" : "text-red-600 group-hover:text-red-700"} font-medium transition-colors duration-150`}
-                            >
-                              View Credential
-                              <ExternalLink className="w-3 h-3 ml-1" />
-                            </span>
-                          </div>
-                        )}
                       </div>
                     </div>
                   </CardContent>
@@ -1031,4 +1016,106 @@ const skillCategories = useMemo(
                 >
                   Phone
                 </h3>
-                \
+                <a
+                  href="tel:+918851072378"
+                  className={`${isDarkMode ? "text-gray-400 hover:text-gray-200" : "text-gray-600 hover:text-gray-800"} transition-colors duration-150`}
+                >
+                  +91 8851072378
+                </a>
+              </div>
+
+              {/* Email */}
+              <div
+                className={`group text-center p-6 ${isDarkMode ? "bg-gray-900/30 border border-gray-700/30 hover:border-red-500/50" : "bg-white/30 border border-gray-200/30 hover:border-red-500/50"} backdrop-blur-sm rounded-lg transition-all duration-150 ${isDarkMode ? "hover:bg-gray-800/40" : "hover:bg-white/50"}`}
+              >
+                <Mail
+                  className={`w-8 h-8 text-red-500 mx-auto mb-3 ${!isMobile ? "group-hover:scale-110" : ""} transition-all duration-150`}
+                />
+                <h3
+                  className={`font-bold text-lg mb-2 ${isDarkMode ? "text-gray-200 group-hover:text-red-400" : "text-gray-800 group-hover:text-red-600"} transition-colors duration-150`}
+                >
+                  Email
+                </h3>
+                <a
+                  href="mailto:vishaljha055616@gmail.com"
+                  className={`${isDarkMode ? "text-gray-400 hover:text-gray-200" : "text-gray-600 hover:text-gray-800"} transition-colors duration-150 text-sm break-all`}
+                >
+                  vishaljha055616@gmail.com
+                </a>
+              </div>
+
+              {/* Location */}
+              <div
+                className={`group text-center p-6 ${isDarkMode ? "bg-gray-900/30 border border-gray-700/30 hover:border-red-500/50" : "bg-white/30 border border-gray-200/30 hover:border-red-500/50"} backdrop-blur-sm rounded-lg transition-all duration-150 ${isDarkMode ? "hover:bg-gray-800/40" : "hover:bg-white/50"}`}
+              >
+                <MapPin
+                  className={`w-8 h-8 text-red-500 mx-auto mb-3 ${!isMobile ? "group-hover:scale-110" : ""} transition-all duration-150`}
+                />
+                <h3
+                  className={`font-bold text-lg mb-2 ${isDarkMode ? "text-gray-200 group-hover:text-red-400" : "text-gray-800 group-hover:text-red-600"} transition-colors duration-150`}
+                >
+                  Location
+                </h3>
+                <p className={`${isDarkMode ? "text-gray-400" : "text-gray-600"}`}>New Delhi, India</p>
+              </div>
+            </div>
+
+            {/* Final CTA */}
+            <div className="text-center">
+              <Button
+                size="lg"
+                className={`bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white font-bold px-12 py-6 rounded-lg transition-all duration-150 shadow-xl hover:shadow-red-500/30 ${!isMobile ? "transform hover:scale-105" : ""}`}
+                onClick={() => window.open("mailto:vishaljha055616@gmail.com", "_blank")}
+              >
+                <Mail className="w-5 h-5 mr-2" />
+                Start a Conversation
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Footer */}
+        <footer
+          className={`${isMobile ? "scroll-animate-essential" : "scroll-animate"} container mx-auto px-4 py-12 text-center transition-all duration-1000 ${visibleElements.has("footer") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+          id="footer"
+        >
+          <div className={`${isDarkMode ? "border-t border-gray-800/50" : "border-t border-gray-200/50"} pt-8`}>
+            <div className="flex justify-center space-x-6 mb-6">
+              <a
+                href="https://github.com/VishalJha01"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${isDarkMode ? "text-gray-400 hover:text-red-400" : "text-gray-600 hover:text-red-600"} transition-colors duration-150`}
+                aria-label="GitHub"
+              >
+                <Github className="w-6 h-6" />
+              </a>
+              <a
+                href="https://www.linkedin.com/in/vishaljha1010"
+                target="_blank"
+                rel="noopener noreferrer"
+                className={`${isDarkMode ? "text-gray-400 hover:text-red-400" : "text-gray-600 hover:text-red-600"} transition-colors duration-150`}
+                aria-label="LinkedIn"
+              >
+                <Linkedin className="w-6 h-6" />
+              </a>
+              <a
+                href="mailto:vishaljha055616@gmail.com"
+                className={`${isDarkMode ? "text-gray-400 hover:text-red-400" : "text-gray-600 hover:text-red-600"} transition-colors duration-150`}
+                aria-label="Email"
+              >
+                <Mail className="w-6 h-6" />
+              </a>
+            </div>
+            <p
+              className={`${isDarkMode ? "text-gray-500 hover:text-gray-400" : "text-gray-600 hover:text-gray-700"} transition-colors duration-150`}
+            >
+             © 2025 Vishal Jha. Built with curiosity and code.
+            </p>
+          </div>
+        </footer>
+      </div>
+    </div>
+  )
+}
+
