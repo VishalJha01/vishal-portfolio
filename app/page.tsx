@@ -159,42 +159,63 @@ export default function Portfolio() {
     }
   }, [isMobile])
 
-  // Memoized data to prevent re-renders
-  const skills = useMemo(
+  // Memoized data to prevent re-renders - Updated with better categorization and naming
+  const skillCategories = useMemo(
     () => [
+       {
+    category: "🧠 Data Science & AI",
+    skills: [
       { name: "Python", icon: "🐍" },
       { name: "Machine Learning", icon: "🤖" },
       { name: "Deep Learning", icon: "🧠" },
-      { name: "JavaScript", icon: "⚡" },
-      { name: "React.js", icon: "⚛️" },
-      { name: "SQL", icon: "🗄️" },
-      { name: "Power BI", icon: "📊" },
-      { name: "Excel", icon: "📈" },
-      { name: "Tableau", icon: "📉" },
-      { name: "MySQL", icon: "🐬" },
-      { name: "PostgreSQL", icon: "🐘" },
-      { name: "MongoDB", icon: "🍃" },
-      { name: "HTML5", icon: "🌐" },
-      { name: "CSS3", icon: "🎨" },
-      { name: "Tailwind CSS", icon: "💨" },
-      { name: "Flask", icon: "🌶️" },
-      { name: "Git/GitHub", icon: "📚" },
       { name: "TensorFlow", icon: "🔥" },
       { name: "PyTorch", icon: "⚡" },
       { name: "Scikit-learn", icon: "🤖" },
       { name: "Pandas", icon: "🐼" },
       { name: "NumPy", icon: "🔢" },
-      { name: "Matplotlib", icon: "📉" },
-      { name: "Seaborn", icon: "📊" },
       { name: "R Programming", icon: "📊" },
-      { name: "Apache Spark", icon: "⚡" },
       { name: "Jupyter", icon: "📓" },
-      { name: "Google Analytics", icon: "📈" },
-      { name: "Data Visualization", icon: "📊" },
       { name: "Statistical Analysis", icon: "📈" },
     ],
-    [],
-  )
+  },
+  {
+    category: "🌐 Web Development",
+    skills: [
+      { name: "JavaScript", icon: "⚡" },
+      { name: "React.js", icon: "⚛️" },
+      { name: "HTML5", icon: "🌐" },
+      { name: "CSS3", icon: "🎨" },
+      { name: "Tailwind CSS", icon: "💨" },
+      { name: "Flask", icon: "🌶️" },
+    ],
+  },
+  {
+    category: "🔧 Version Control & Tools",
+    skills: [
+      { name: "Git", icon: "🔧" },
+      { name: "GitHub", icon: "📚" },
+    ],
+  },
+  {
+    category: "🗄️ Databases",
+    skills: [
+      { name: "SQL", icon: "🗄️" },
+      { name: "MySQL", icon: "🐬" },
+    ],
+  },
+  {
+    category: "📊 Analytics & BI Tools",
+    skills: [
+      { name: "Power BI", icon: "📊" },
+      { name: "Excel", icon: "📈" },
+      { name: "Tableau", icon: "📉" },
+      { name: "Matplotlib", icon: "📉" },
+      { name: "Seaborn", icon: "📊" },
+      { name: "Google Analytics", icon: "📈" },
+      { name: "Data Visualization", icon: "📊" },
+    ],
+  },
+];
 
   const projects = useMemo(
     () => [
@@ -726,9 +747,9 @@ export default function Portfolio() {
 
         {/* Skills Section */}
         <section id="skills" className="container mx-auto px-4 py-12">
-          <div className="max-w-6xl mx-auto">
+          <div className="max-w-7xl mx-auto">
             <div
-              className={`${isMobile ? "scroll-animate-essential" : "scroll-animate"} text-center mb-12 transition-all duration-1000 ${visibleElements.has("skills-title") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+              className={`${isMobile ? "scroll-animate-essential" : "scroll-animate"} text-center mb-16 transition-all duration-1000 ${visibleElements.has("skills-title") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
               id="skills-title"
             >
               <h2
@@ -741,24 +762,50 @@ export default function Portfolio() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8">
-              {skills.map((skill, index) => (
+            <div className="space-y-12">
+              {skillCategories.map((category, categoryIndex) => (
                 <div
-                  key={skill.name}
-                  className={`${isMobile ? "scroll-animate-essential" : "scroll-animate"} group flex flex-col items-center p-6 transition-all duration-1000 ${!isMobile ? "hover:transform hover:scale-105" : ""} ${visibleElements.has(`skill-${index}`) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
-                  style={{ transitionDelay: `${index * (isMobile ? 50 : 100)}ms` }}
-                  id={`skill-${index}`}
+                  key={category.category}
+                  className={`${isMobile ? "scroll-animate-essential" : "scroll-animate"} transition-all duration-1000 ${visibleElements.has(`category-${categoryIndex}`) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+                  style={{ transitionDelay: `${categoryIndex * (isMobile ? 200 : 300)}ms` }}
+                  id={`category-${categoryIndex}`}
                 >
-                  <div
-                    className={`text-6xl mb-4 ${!isMobile ? "group-hover:scale-110" : ""} transition-all duration-200 drop-shadow-lg ${!isMobile ? "group-hover:drop-shadow-2xl filter group-hover:brightness-110" : ""}`}
-                  >
-                    {skill.icon}
+                  {/* Category Header */}
+                  <div className="text-center mb-8">
+                    <h3
+                      className={`text-2xl md:text-3xl font-bold ${isDarkMode ? "text-gray-200" : "text-gray-800"} mb-2`}
+                    >
+                      {category.category}
+                    </h3>
+                    <div
+                      className={`w-24 h-1 ${isDarkMode ? "bg-red-500/50" : "bg-red-500/40"} mx-auto rounded-full`}
+                    />
                   </div>
-                  <h3
-                    className={`font-bold text-lg ${isDarkMode ? "text-gray-200 group-hover:text-red-400" : "text-gray-800 group-hover:text-red-600"} transition-colors duration-150 text-center drop-shadow-md`}
-                  >
-                    {skill.name}
-                  </h3>
+
+                  {/* Skills Grid */}
+                  <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
+                    {category.skills.map((skill, skillIndex) => (
+                      <div
+                        key={skill.name}
+                        className={`${isMobile ? "scroll-animate-essential" : "scroll-animate"} group flex items-center space-x-3 p-3 transition-all duration-1000 ${!isMobile ? "hover:transform hover:scale-105" : ""} ${isDarkMode ? "bg-gray-900/30 hover:bg-gray-800/50 border border-gray-700/30 hover:border-red-500/50" : "bg-white/30 hover:bg-white/60 border border-gray-200/30 hover:border-red-500/50"} backdrop-blur-sm rounded-lg shadow-md ${isDarkMode ? "hover:shadow-red-500/20" : "hover:shadow-red-500/10"} ${visibleElements.has(`skill-${categoryIndex}-${skillIndex}`) ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
+                        style={{
+                          transitionDelay: `${(categoryIndex * category.skills.length + skillIndex) * (isMobile ? 30 : 50)}ms`,
+                        }}
+                        id={`skill-${categoryIndex}-${skillIndex}`}
+                      >
+                        <span
+                          className={`text-2xl ${!isMobile ? "group-hover:scale-110" : ""} transition-all duration-200`}
+                        >
+                          {skill.icon}
+                        </span>
+                        <span
+                          className={`font-semibold text-sm ${isDarkMode ? "text-gray-200 group-hover:text-red-400" : "text-gray-800 group-hover:text-red-600"} transition-colors duration-150`}
+                        >
+                          {skill.name}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
