@@ -60,252 +60,278 @@
   }
 }
 
-/* Enhanced Saturn Ring Animations - Thicker & More Aesthetic */
-@keyframes saturn-main-ring {
-  0% {
+/* Enhanced Saturn Ring Animations - Mobile Optimized */
+/* Desktop/Hover Devices Only - Full Animations */
+@media (hover: hover) and (pointer: fine) {
+  @keyframes saturn-main-ring {
+    0% {
+      transform: rotate(0deg) scale(0.9);
+    }
+    100% {
+      transform: rotate(360deg) scale(0.9);
+    }
+  }
+
+  @keyframes saturn-ring-2 {
+    0% {
+      transform: rotate(0deg) scale(0.85);
+    }
+    100% {
+      transform: rotate(-360deg) scale(0.85);
+    }
+  }
+
+  @keyframes saturn-ring-3 {
+    0% {
+      transform: rotate(0deg) scale(0.8);
+    }
+    100% {
+      transform: rotate(360deg) scale(0.8);
+    }
+  }
+
+  @keyframes saturn-ring-4 {
+    0% {
+      transform: rotate(0deg) scale(0.75);
+    }
+    100% {
+      transform: rotate(-360deg) scale(0.75);
+    }
+  }
+
+  @keyframes saturn-ring-5 {
+    0% {
+      transform: rotate(0deg) scale(0.7);
+    }
+    100% {
+      transform: rotate(360deg) scale(0.7);
+    }
+  }
+
+  @keyframes saturn-ring-6 {
+    0% {
+      transform: rotate(0deg) scale(0.65);
+    }
+    100% {
+      transform: rotate(-360deg) scale(0.65);
+    }
+  }
+
+  @keyframes saturn-ring-7 {
+    0% {
+      transform: rotate(0deg) scale(0.95);
+    }
+    100% {
+      transform: rotate(360deg) scale(0.95);
+    }
+  }
+
+  @keyframes saturn-ring-8 {
+    0% {
+      transform: rotate(0deg) scale(1.0);
+    }
+    100% {
+      transform: rotate(-360deg) scale(1.0);
+    }
+  }
+
+  @keyframes saturn-ring-9 {
+    0% {
+      transform: rotate(0deg) scale(1.05);
+    }
+    100% {
+      transform: rotate(360deg) scale(1.05);
+    }
+  }
+
+  @keyframes saturn-ring-10 {
+    0% {
+      transform: rotate(0deg) scale(0.6);
+    }
+    100% {
+      transform: rotate(-360deg) scale(0.6);
+    }
+  }
+
+  @keyframes saturn-ring-11 {
+    0% {
+      transform: rotate(0deg) scale(0.55);
+    }
+    100% {
+      transform: rotate(360deg) scale(0.55);
+    }
+  }
+
+  @keyframes saturn-ring-12 {
+    0% {
+      transform: rotate(0deg) scale(0.5);
+    }
+    100% {
+      transform: rotate(-360deg) scale(0.5);
+    }
+  }
+
+  @keyframes saturn-ring-13 {
+    0% {
+      transform: rotate(0deg) scale(0.45);
+    }
+    100% {
+      transform: rotate(360deg) scale(0.45);
+    }
+  }
+
+  @keyframes saturn-ring-14 {
+    0% {
+      transform: rotate(0deg) scale(0.4);
+    }
+    100% {
+      transform: rotate(-360deg) scale(0.4);
+    }
+  }
+
+  @keyframes saturn-ring-15 {
+    0% {
+      transform: rotate(0deg) scale(0.35);
+    }
+    100% {
+      transform: rotate(360deg) scale(0.35);
+    }
+  }
+
+  @keyframes saturn-ring-16 {
+    0% {
+      transform: rotate(0deg) scale(1.1);
+    }
+    100% {
+      transform: rotate(-360deg) scale(1.1);
+    }
+  }
+
+  @keyframes saturn-ring-17 {
+    0% {
+      transform: rotate(0deg) scale(1.15);
+    }
+    100% {
+      transform: rotate(360deg) scale(1.15);
+    }
+  }
+
+  @keyframes saturn-ring-18 {
+    0% {
+      transform: rotate(0deg) scale(0.3);
+    }
+    100% {
+      transform: rotate(-360deg) scale(0.3);
+    }
+  }
+
+  /* Apply animations with varying speeds - Desktop Only */
+  .animate-saturn-main-ring {
+    animation: saturn-main-ring 180s linear infinite;
+  }
+  .animate-saturn-ring-2 {
+    animation: saturn-ring-2 160s linear infinite;
+  }
+  .animate-saturn-ring-3 {
+    animation: saturn-ring-3 140s linear infinite;
+  }
+  .animate-saturn-ring-4 {
+    animation: saturn-ring-4 120s linear infinite;
+  }
+  .animate-saturn-ring-5 {
+    animation: saturn-ring-5 200s linear infinite;
+  }
+  .animate-saturn-ring-6 {
+    animation: saturn-ring-6 100s linear infinite;
+  }
+  .animate-saturn-ring-7 {
+    animation: saturn-ring-7 220s linear infinite;
+  }
+  .animate-saturn-ring-8 {
+    animation: saturn-ring-8 240s linear infinite;
+  }
+  .animate-saturn-ring-9 {
+    animation: saturn-ring-9 260s linear infinite;
+  }
+  .animate-saturn-ring-10 {
+    animation: saturn-ring-10 80s linear infinite;
+  }
+  .animate-saturn-ring-11 {
+    animation: saturn-ring-11 90s linear infinite;
+  }
+  .animate-saturn-ring-12 {
+    animation: saturn-ring-12 70s linear infinite;
+  }
+  .animate-saturn-ring-13 {
+    animation: saturn-ring-13 110s linear infinite;
+  }
+  .animate-saturn-ring-14 {
+    animation: saturn-ring-14 60s linear infinite;
+  }
+  .animate-saturn-ring-15 {
+    animation: saturn-ring-15 130s linear infinite;
+  }
+  .animate-saturn-ring-16 {
+    animation: saturn-ring-16 280s linear infinite;
+  }
+  .animate-saturn-ring-17 {
+    animation: saturn-ring-17 300s linear infinite;
+  }
+  .animate-saturn-ring-18 {
+    animation: saturn-ring-18 50s linear infinite;
+  }
+}
+
+/* Mobile/Touch Devices - Simplified/Static Animations */
+@media (hover: none) and (pointer: coarse) {
+  /* Disable complex Saturn animations on mobile */
+  .animate-saturn-main-ring,
+  .animate-saturn-ring-2,
+  .animate-saturn-ring-3,
+  .animate-saturn-ring-4,
+  .animate-saturn-ring-5,
+  .animate-saturn-ring-6,
+  .animate-saturn-ring-7,
+  .animate-saturn-ring-8,
+  .animate-saturn-ring-9,
+  .animate-saturn-ring-10,
+  .animate-saturn-ring-11,
+  .animate-saturn-ring-12,
+  .animate-saturn-ring-13,
+  .animate-saturn-ring-14,
+  .animate-saturn-ring-15,
+  .animate-saturn-ring-16,
+  .animate-saturn-ring-17,
+  .animate-saturn-ring-18 {
+    animation: none;
+    /* Maintain static positioning */
     transform: rotate(0deg) scale(0.9);
   }
-  100% {
-    transform: rotate(360deg) scale(0.9);
+
+  /* Keep only essential animations on mobile */
+  @keyframes mobile-simple-rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  /* Apply single, lightweight animation for key elements only */
+  .animate-saturn-main-ring {
+    animation: mobile-simple-rotate 60s linear infinite;
   }
 }
 
-@keyframes saturn-ring-2 {
-  0% {
-    transform: rotate(0deg) scale(0.85);
-  }
-  100% {
-    transform: rotate(-360deg) scale(0.85);
-  }
-}
-
-@keyframes saturn-ring-3 {
-  0% {
-    transform: rotate(0deg) scale(0.8);
-  }
-  100% {
-    transform: rotate(360deg) scale(0.8);
-  }
-}
-
-@keyframes saturn-ring-4 {
-  0% {
-    transform: rotate(0deg) scale(0.75);
-  }
-  100% {
-    transform: rotate(-360deg) scale(0.75);
-  }
-}
-
-@keyframes saturn-ring-5 {
-  0% {
-    transform: rotate(0deg) scale(0.7);
-  }
-  100% {
-    transform: rotate(360deg) scale(0.7);
-  }
-}
-
-@keyframes saturn-ring-6 {
-  0% {
-    transform: rotate(0deg) scale(0.65);
-  }
-  100% {
-    transform: rotate(-360deg) scale(0.65);
-  }
-}
-
-@keyframes saturn-ring-7 {
-  0% {
-    transform: rotate(0deg) scale(0.95);
-  }
-  100% {
-    transform: rotate(360deg) scale(0.95);
-  }
-}
-
-@keyframes saturn-ring-8 {
-  0% {
-    transform: rotate(0deg) scale(1.0);
-  }
-  100% {
-    transform: rotate(-360deg) scale(1.0);
-  }
-}
-
-@keyframes saturn-ring-9 {
-  0% {
-    transform: rotate(0deg) scale(1.05);
-  }
-  100% {
-    transform: rotate(360deg) scale(1.05);
-  }
-}
-
-@keyframes saturn-ring-10 {
-  0% {
-    transform: rotate(0deg) scale(0.6);
-  }
-  100% {
-    transform: rotate(-360deg) scale(0.6);
-  }
-}
-
-@keyframes saturn-ring-11 {
-  0% {
-    transform: rotate(0deg) scale(0.55);
-  }
-  100% {
-    transform: rotate(360deg) scale(0.55);
-  }
-}
-
-@keyframes saturn-ring-12 {
-  0% {
-    transform: rotate(0deg) scale(0.5);
-  }
-  100% {
-    transform: rotate(-360deg) scale(0.5);
-  }
-}
-
-@keyframes saturn-ring-13 {
-  0% {
-    transform: rotate(0deg) scale(0.45);
-  }
-  100% {
-    transform: rotate(360deg) scale(0.45);
-  }
-}
-
-@keyframes saturn-ring-14 {
-  0% {
-    transform: rotate(0deg) scale(0.4);
-  }
-  100% {
-    transform: rotate(-360deg) scale(0.4);
-  }
-}
-
-@keyframes saturn-ring-15 {
-  0% {
-    transform: rotate(0deg) scale(0.35);
-  }
-  100% {
-    transform: rotate(360deg) scale(0.35);
-  }
-}
-
-@keyframes saturn-ring-16 {
-  0% {
-    transform: rotate(0deg) scale(1.1);
-  }
-  100% {
-    transform: rotate(-360deg) scale(1.1);
-  }
-}
-
-@keyframes saturn-ring-17 {
-  0% {
-    transform: rotate(0deg) scale(1.15);
-  }
-  100% {
-    transform: rotate(360deg) scale(1.15);
-  }
-}
-
-@keyframes saturn-ring-18 {
-  0% {
-    transform: rotate(0deg) scale(0.3);
-  }
-  100% {
-    transform: rotate(-360deg) scale(0.3);
-  }
-}
-
-/* Apply animations with varying speeds and enhanced effects */
-.animate-saturn-main-ring {
-  animation: saturn-main-ring 180s linear infinite;
-}
-
-.animate-saturn-ring-2 {
-  animation: saturn-ring-2 160s linear infinite;
-}
-
-.animate-saturn-ring-3 {
-  animation: saturn-ring-3 140s linear infinite;
-}
-
-.animate-saturn-ring-4 {
-  animation: saturn-ring-4 120s linear infinite;
-}
-
-.animate-saturn-ring-5 {
-  animation: saturn-ring-5 200s linear infinite;
-}
-
-.animate-saturn-ring-6 {
-  animation: saturn-ring-6 100s linear infinite;
-}
-
-.animate-saturn-ring-7 {
-  animation: saturn-ring-7 220s linear infinite;
-}
-
-.animate-saturn-ring-8 {
-  animation: saturn-ring-8 240s linear infinite;
-}
-
-.animate-saturn-ring-9 {
-  animation: saturn-ring-9 260s linear infinite;
-}
-
-.animate-saturn-ring-10 {
-  animation: saturn-ring-10 80s linear infinite;
-}
-
-.animate-saturn-ring-11 {
-  animation: saturn-ring-11 90s linear infinite;
-}
-
-.animate-saturn-ring-12 {
-  animation: saturn-ring-12 70s linear infinite;
-}
-
-.animate-saturn-ring-13 {
-  animation: saturn-ring-13 110s linear infinite;
-}
-
-.animate-saturn-ring-14 {
-  animation: saturn-ring-14 60s linear infinite;
-}
-
-.animate-saturn-ring-15 {
-  animation: saturn-ring-15 130s linear infinite;
-}
-
-.animate-saturn-ring-16 {
-  animation: saturn-ring-16 280s linear infinite;
-}
-
-.animate-saturn-ring-17 {
-  animation: saturn-ring-17 300s linear infinite;
-}
-
-.animate-saturn-ring-18 {
-  animation: saturn-ring-18 50s linear infinite;
-}
-
-/* Gradient Animation for Typewriter */
+/* Gradient Animation for Typewriter - Optimized */
 @keyframes gradient-typewriter {
-  0% {
+  0%,
+  100% {
     background-position: 0% 50%;
   }
   50% {
     background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
   }
 }
 
@@ -314,16 +340,21 @@
   animation: gradient-typewriter 3s ease-in-out infinite;
 }
 
-/* Gradient Animation for Logo */
+/* Mobile optimization for gradient animations */
+@media (max-width: 768px) {
+  .animate-gradient-typewriter {
+    animation-duration: 6s; /* Slower on mobile */
+  }
+}
+
+/* Gradient Animation for Logo - Optimized */
 @keyframes gradient-logo {
-  0% {
+  0%,
+  100% {
     background-position: 0% 50%;
   }
   50% {
     background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
   }
 }
 
@@ -332,22 +363,32 @@
   animation: gradient-logo 4s ease-in-out infinite;
 }
 
-/* Gradient Animation for Text */
+@media (max-width: 768px) {
+  .animate-gradient-logo {
+    animation-duration: 8s; /* Slower on mobile */
+  }
+}
+
+/* Gradient Animation for Text - Optimized */
 @keyframes gradient-text {
-  0% {
+  0%,
+  100% {
     background-position: 0% 50%;
   }
   50% {
     background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
   }
 }
 
 .animate-gradient-text {
   background-size: 200% 200%;
   animation: gradient-text 5s ease-in-out infinite;
+}
+
+@media (max-width: 768px) {
+  .animate-gradient-text {
+    animation-duration: 10s; /* Slower on mobile */
+  }
 }
 
 /* Slide Down Animation */
@@ -403,9 +444,15 @@
   background: linear-gradient(to bottom, #b91c1c, #991b1b);
 }
 
-/* Enhanced transitions - Faster hover effects */
+/* Enhanced transitions - Optimized for mobile */
 * {
   transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media (max-width: 768px) {
+  * {
+    transition: all 0.2s ease-out; /* Slightly slower on mobile */
+  }
 }
 
 /* Specific fast hover transitions */
@@ -421,32 +468,34 @@
   transition: box-shadow 0.15s ease-out, border-color 0.15s ease-out;
 }
 
-/* Fast hover animations */
-@keyframes quick-bounce {
-  0%,
-  100% {
-    transform: scale(1);
+/* Fast hover animations - Desktop only */
+@media (hover: hover) {
+  @keyframes quick-bounce {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
   }
-  50% {
-    transform: scale(1.05);
-  }
-}
 
-@keyframes quick-glow {
-  0% {
-    box-shadow: 0 0 5px rgba(220, 38, 38, 0.3);
+  @keyframes quick-glow {
+    0% {
+      box-shadow: 0 0 5px rgba(220, 38, 38, 0.3);
+    }
+    100% {
+      box-shadow: 0 0 20px rgba(220, 38, 38, 0.6);
+    }
   }
-  100% {
-    box-shadow: 0 0 20px rgba(220, 38, 38, 0.6);
+
+  .animate-quick-bounce:hover {
+    animation: quick-bounce 0.2s ease-out;
   }
-}
 
-.animate-quick-bounce:hover {
-  animation: quick-bounce 0.2s ease-out;
-}
-
-.animate-quick-glow:hover {
-  animation: quick-glow 0.15s ease-out forwards;
+  .animate-quick-glow:hover {
+    animation: quick-glow 0.15s ease-out forwards;
+  }
 }
 
 /* Selection styling */
@@ -468,37 +517,52 @@
   }
 }
 
-/* Performance optimizations */
-.animate-gradient-typewriter,
-.animate-gradient-logo,
-.animate-gradient-text {
-  will-change: background-position;
+/* Performance optimizations - Desktop only */
+@media (hover: hover) and (pointer: fine) {
+  .animate-gradient-typewriter,
+  .animate-gradient-logo,
+  .animate-gradient-text {
+    will-change: background-position;
+  }
+
+  .animate-saturn-main-ring,
+  .animate-saturn-ring-2,
+  .animate-saturn-ring-3,
+  .animate-saturn-ring-4,
+  .animate-saturn-ring-5,
+  .animate-saturn-ring-6,
+  .animate-saturn-ring-7,
+  .animate-saturn-ring-8,
+  .animate-saturn-ring-9,
+  .animate-saturn-ring-10,
+  .animate-saturn-ring-11,
+  .animate-saturn-ring-12,
+  .animate-saturn-ring-13,
+  .animate-saturn-ring-14,
+  .animate-saturn-ring-15,
+  .animate-saturn-ring-16,
+  .animate-saturn-ring-17,
+  .animate-saturn-ring-18 {
+    will-change: transform;
+  }
 }
 
-.animate-saturn-main-ring,
-.animate-saturn-ring-2,
-.animate-saturn-ring-3,
-.animate-saturn-ring-4,
-.animate-saturn-ring-5,
-.animate-saturn-ring-6,
-.animate-saturn-ring-7,
-.animate-saturn-ring-8,
-.animate-saturn-ring-9,
-.animate-saturn-ring-10,
-.animate-saturn-ring-11,
-.animate-saturn-ring-12,
-.animate-saturn-ring-13,
-.animate-saturn-ring-14,
-.animate-saturn-ring-15,
-.animate-saturn-ring-16,
-.animate-saturn-ring-17,
-.animate-saturn-ring-18 {
-  will-change: transform;
+/* Mobile performance - Remove will-change to reduce layers */
+@media (max-width: 768px) {
+  * {
+    will-change: auto !important;
+  }
 }
 
 /* Scroll animations */
 .scroll-animate {
   will-change: transform, opacity;
+}
+
+@media (max-width: 768px) {
+  .scroll-animate {
+    will-change: auto; /* Disable on mobile */
+  }
 }
 
 /* Custom border width */
@@ -521,5 +585,24 @@ a:focus-visible {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+}
+
+/* Battery optimization for mobile */
+@media (max-width: 768px) and (hover: none) {
+  /* Pause animations when page is not visible */
+  .animate-gradient-typewriter,
+  .animate-gradient-logo,
+  .animate-gradient-text {
+    animation-play-state: running;
+  }
+
+  /* Reduce animation frequency on low-end devices */
+  @media (max-resolution: 150dpi) {
+    .animate-gradient-typewriter,
+    .animate-gradient-logo,
+    .animate-gradient-text {
+      animation-duration: 15s;
+    }
   }
 }
