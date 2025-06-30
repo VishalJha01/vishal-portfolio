@@ -159,63 +159,65 @@ export default function Portfolio() {
     }
   }, [isMobile])
 
-  // Memoized data to prevent re-renders - Updated with better categorization and naming
-  const skillCategories = useMemo(
-    () => [
-       {
-    category: "🧠 Data Science & AI",
-    skills: [
-      { name: "Python", icon: "🐍" },
-      { name: "Machine Learning", icon: "🤖" },
-      { name: "Deep Learning", icon: "🧠" },
-      { name: "TensorFlow", icon: "🔥" },
-      { name: "PyTorch", icon: "⚡" },
-      { name: "Scikit-learn", icon: "🤖" },
-      { name: "Pandas", icon: "🐼" },
-      { name: "NumPy", icon: "🔢" },
-      { name: "R Programming", icon: "📊" },
-      { name: "Jupyter", icon: "📓" },
-      { name: "Statistical Analysis", icon: "📈" },
-    ],
-  },
-  {
-    category: "🌐 Web Development",
-    skills: [
-      { name: "JavaScript", icon: "⚡" },
-      { name: "React.js", icon: "⚛️" },
-      { name: "HTML5", icon: "🌐" },
-      { name: "CSS3", icon: "🎨" },
-      { name: "Tailwind CSS", icon: "💨" },
-      { name: "Flask", icon: "🌶️" },
-    ],
-  },
-  {
-    category: "🔧 Version Control & Tools",
-    skills: [
-      { name: "Git", icon: "🔧" },
-      { name: "GitHub", icon: "📚" },
-    ],
-  },
-  {
-    category: "🗄️ Databases",
-    skills: [
-      { name: "SQL", icon: "🗄️" },
-      { name: "MySQL", icon: "🐬" },
-    ],
-  },
-  {
-    category: "📊 Analytics & BI Tools",
-    skills: [
-      { name: "Power BI", icon: "📊" },
-      { name: "Excel", icon: "📈" },
-      { name: "Tableau", icon: "📉" },
-      { name: "Matplotlib", icon: "📉" },
-      { name: "Seaborn", icon: "📊" },
-      { name: "Google Analytics", icon: "📈" },
-      { name: "Data Visualization", icon: "📊" },
-    ],
-  },
-];
+ // Memoized data to prevent re-renders - Updated with better categorization and naming
+const skillCategories = useMemo(
+  () => [
+    {
+      category: "🧠 Data Science & AI",
+      skills: [
+        { name: "Python", icon: "🐍" },
+        { name: "Machine Learning", icon: "🤖" },
+        { name: "Deep Learning", icon: "🧠" },
+        { name: "TensorFlow", icon: "🔥" },
+        { name: "PyTorch", icon: "⚡" },
+        { name: "Scikit-learn", icon: "🤖" },
+        { name: "Pandas", icon: "🐼" },
+        { name: "NumPy", icon: "🔢" },
+        { name: "R Programming", icon: "📊" },
+        { name: "Jupyter", icon: "📓" },
+        { name: "Statistical Analysis", icon: "📈" },
+      ],
+    },
+    {
+      category: "🌐 Web Development",
+      skills: [
+        { name: "JavaScript", icon: "⚡" },
+        { name: "React.js", icon: "⚛️" },
+        { name: "HTML5", icon: "🌐" },
+        { name: "CSS3", icon: "🎨" },
+        { name: "Tailwind CSS", icon: "💨" },
+        { name: "Flask", icon: "🌶️" },
+      ],
+    },
+    {
+      category: "🔧 Version Control & Tools",
+      skills: [
+        { name: "Git", icon: "🔧" },
+        { name: "GitHub", icon: "📚" },
+      ],
+    },
+    {
+      category: "🗄️ Databases",
+      skills: [
+        { name: "SQL", icon: "🗄️" },
+        { name: "MySQL", icon: "🐬" },
+      ],
+    },
+    {
+      category: "📊 Analytics & BI Tools",
+      skills: [
+        { name: "Power BI", icon: "📊" },
+        { name: "Excel", icon: "📈" },
+        { name: "Tableau", icon: "📉" },
+        { name: "Matplotlib", icon: "📉" },
+        { name: "Seaborn", icon: "📊" },
+        { name: "Google Analytics", icon: "📈" },
+        { name: "Data Visualization", icon: "📊" },
+      ],
+    },
+  ],
+  []
+);
 
   const projects = useMemo(
     () => [
