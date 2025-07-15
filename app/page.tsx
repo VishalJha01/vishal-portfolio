@@ -221,42 +221,42 @@ const skillCategories = useMemo(
 
   const projects = useMemo(
     () => [
-      {
-  title: "Heart Disease Risk Analysis Dashboard | Power BI",
-  description:
-    "Interactive, insight-driven Power BI dashboard built using real-world clinical data from Kaggle. Objective: To identify and visualize key risk factors contributing to heart disease using a combination of clinical data analysis, Python preprocessing, and advanced DAX logic.",
-  tech: ["Power BI", "Python", "Pandas", "NumPy", "DAX", "Data Modeling", "Data Visualization"],
-  link: "https://github.com/VishalJha01/Heart-disease-dashboard",
-  image: "/projects/Heart Disease dashboard.png",
-      },
-      {
-        title: "AeroPulse AQI.AI - Smart Air Quality Prediction",
-        description:
-          "AI-powered air quality prediction platform using machine learning models to forecast AQI levels. Features real-time data visualization, interactive dashboards, and predictive analytics for environmental monitoring.",
-        tech: ["Python", "Pandas", "NumPy", "Scikit-learn", "Streamlit", "Machine Learning"],
-        link: "https://github.com/VishalJha01/Aeropulse-aqi.AI",
-        demo: "https://aeropulse-aqi-ai.streamlit.app",
-        image: "/projects/aeropulse.png",
-      },
-      {
-        title: "Dr. Dubey Dental Clinic",
-        description:
-          "Modern responsive website with appointment prediction system and patient analytics dashboard. Features optimized UI/UX and data-driven insights for clinic management.",
-        tech: ["HTML5", "CSS3", "JavaScript", "Tailwind CSS", "Data Analytics"],
-        link: "https://github.com/VishalJha01/Dr.-Dubey-Dental-Clinic",
-        demo: "https://dr-dubey-dental-clinic.vercel.app",
-        image: "/projects/dr-dubey-dental.png",
-      },
-      {
-        title: "Wecofy - Eco-Friendly E-commerce",
-        description:
-          "Sustainable e-commerce platform with intelligent product recommendation system, environmental impact analytics, and responsive design. Integrated ML-based user behavior analysis.",
-        tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "Flask", "Machine Learning"],
-        link: "https://github.com/VishalJha01/Wecofy-E-commerce-website",
-        demo: "https://wecofy-website.vercel.app",
-        image: "/projects/wecofy-ecommerce.png",
-      },
-    ],
+  {
+    title: "Heart Disease Risk Analysis Dashboard | Power BI",
+    description:
+      "Interactive, insight-driven Power BI dashboard built using real-world clinical data from Kaggle. Objective: To identify and visualize key risk factors contributing to heart disease using a combination of clinical data analysis, Python preprocessing, and advanced DAX logic.",
+    tech: ["Power BI", "Python", "Pandas", "NumPy", "DAX", "Data Modeling", "Data Visualization"],
+    link: "https://github.com/VishalJha01/Heart-disease-dashboard",
+    image: "/projects/Heart Disease dashboard.png",
+  },
+  {
+    title: "AeroPulse AQI.AI - Smart Air Quality Prediction",
+    description:
+      "AI-powered air quality prediction platform using machine learning models to forecast AQI levels. Features real-time data visualization, interactive dashboards, and predictive analytics for environmental monitoring.",
+    tech: ["Python", "Pandas", "NumPy", "Scikit-learn", "Streamlit", "Machine Learning"],
+    link: "https://github.com/VishalJha01/Aeropulse-aqi.AI",
+    demo: "https://aeropulse-aqi-ai.streamlit.app",
+    image: "/projects/aeropulse.png",
+  },
+  {
+    title: "Dr. Dubey Dental Clinic",
+    description:
+      "Modern responsive website with appointment prediction system and patient analytics dashboard. Features optimized UI/UX and data-driven insights for clinic management.",
+    tech: ["HTML5", "CSS3", "JavaScript", "Tailwind CSS", "Data Analytics"],
+    link: "https://github.com/VishalJha01/Dr.-Dubey-Dental-Clinic",
+    demo: "https://dr-dubey-dental-clinic.vercel.app",
+    image: "/projects/dr-dubey-dental.png",
+  },
+  {
+    title: "Wecofy - Eco-Friendly E-commerce",
+    description:
+      "Sustainable e-commerce platform with intelligent product recommendation system, environmental impact analytics, and responsive design. Integrated ML-based user behavior analysis.",
+    tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "Flask", "Machine Learning"],
+    link: "https://github.com/VishalJha01/Wecofy-E-commerce-website",
+    demo: "https://wecofy-website.vercel.app",
+    image: "/projects/wecofy-ecommerce.png",
+  },
+]
     [],
   )
 
