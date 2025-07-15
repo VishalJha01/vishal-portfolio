@@ -9,24 +9,20 @@ import { useState, useEffect, useRef, useCallback, useMemo } from "react"
 // Mobile detection hook
 const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState(false)
-
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768 || "ontouchstart" in window)
     }
-
     checkMobile()
     window.addEventListener("resize", checkMobile)
     return () => window.removeEventListener("resize", checkMobile)
   }, [])
-
   return isMobile
 }
 
 // Throttle hook for performance
 const useThrottle = (callback: Function, delay: number) => {
   const lastRun = useRef(Date.now())
-
   return useCallback(
     (...args: any[]) => {
       if (Date.now() - lastRun.current >= delay) {
@@ -43,11 +39,12 @@ export default function Portfolio() {
   const [scrollY, setScrollY] = useState(0)
   const [typewriterText, setTypewriterText] = useState("")
   const [isTyping, setIsTyping] = useState(false)
-  const [visibleElements, setVisibleElements] = useState(new Set())
+  const [visibleElements, setVisibleElements] = useState(new Set<string>())
   const [isDarkMode, setIsDarkMode] = useState(true)
 
   const isMobile = useIsMobile()
   const fullName = "VISHAL JHA"
+
   const observerRef = useRef<IntersectionObserver | null>(null)
   const typewriterTimeoutRef = useRef<NodeJS.Timeout | null>(null)
   const typewriterIntervalRef = useRef<NodeJS.Timeout | null>(null)
@@ -67,35 +64,24 @@ export default function Portfolio() {
 
   // Optimized Intersection Observer
   useEffect(() => {
-    if (isMobile) {
-      // Simplified observer for mobile
-      observerRef.current = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setVisibleElements((prev) => new Set(prev).add(entry.target.id))
-            }
-          })
-        },
-        { threshold: 0.05, rootMargin: "100px" }, // Larger margins, lower threshold for mobile
-      )
-    } else {
-      observerRef.current = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              setVisibleElements((prev) => new Set(prev).add(entry.target.id))
-            }
-          })
-        },
-        { threshold: 0.1, rootMargin: "50px" },
-      )
+    if (observerRef.current) {
+      observerRef.current.disconnect()
     }
+
+    observerRef.current = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisibleElements((prev) => new Set(prev).add(entry.target.id))
+          }
+        })
+      },
+      { threshold: isMobile ? 0.05 : 0.1, rootMargin: isMobile ? "100px" : "50px" },
+    )
 
     // Only observe essential elements on mobile
     const selector = isMobile ? ".scroll-animate-essential" : ".scroll-animate"
     const elements = document.querySelectorAll(selector)
-
     elements.forEach((el) => {
       if (observerRef.current && el.id) {
         observerRef.current.observe(el)
@@ -123,7 +109,6 @@ export default function Portfolio() {
       setIsTyping(true)
       setTypewriterText("")
       let currentIndex = 0
-
       typewriterIntervalRef.current = setInterval(
         () => {
           if (currentIndex <= fullName.length) {
@@ -157,106 +142,106 @@ export default function Portfolio() {
         clearInterval(typewriterIntervalRef.current)
       }
     }
-  }, [isMobile])
+  }, [isMobile, fullName]) // Added fullName to dependencies
 
- // Memoized data to prevent re-renders - Updated with better categorization and naming
-const skillCategories = useMemo(
-  () => [
-    {
-      category: "🧠 Data Science & AI",
-      skills: [
-        { name: "Python", icon: "🐍" },
-        { name: "Machine Learning", icon: "🤖" },
-        { name: "Deep Learning", icon: "🧠" },
-        { name: "TensorFlow", icon: "🔥" },
-        { name: "PyTorch", icon: "⚡" },
-        { name: "Scikit-learn", icon: "🤖" },
-        { name: "Pandas", icon: "🐼" },
-        { name: "NumPy", icon: "🔢" },
-        { name: "R Programming", icon: "📊" },
-        { name: "Jupyter", icon: "📓" },
-        { name: "Statistical Analysis", icon: "📈" },
-      ],
-    },
-    {
-      category: "🌐 Web Development",
-      skills: [
-        { name: "JavaScript", icon: "⚡" },
-        { name: "React.js", icon: "⚛️" },
-        { name: "HTML5", icon: "🌐" },
-        { name: "CSS3", icon: "🎨" },
-        { name: "Tailwind CSS", icon: "💨" },
-        { name: "Flask", icon: "🌶️" },
-      ],
-    },
-    {
-      category: "🔧 Version Control & Tools",
-      skills: [
-        { name: "Git", icon: "🔧" },
-        { name: "GitHub", icon: "📚" },
-      ],
-    },
-    {
-      category: "🗄️ Databases",
-      skills: [
-        { name: "SQL", icon: "🗄️" },
-        { name: "MySQL", icon: "🐬" },
-      ],
-    },
-    {
-      category: "📊 Analytics & BI Tools",
-      skills: [
-        { name: "Power BI", icon: "📊" },
-        { name: "Excel", icon: "📈" },
-        { name: "Tableau", icon: "📉" },
-        { name: "Matplotlib", icon: "📉" },
-        { name: "Seaborn", icon: "📊" },
-        { name: "Google Analytics", icon: "📈" },
-        { name: "Data Visualization", icon: "📊" },
-      ],
-    },
-  ],
-  []
-);
+  // Memoized data to prevent re-renders - Updated with better categorization and naming
+  const skillCategories = useMemo(
+    () => [
+      {
+        category: "🧠 Data Science & AI",
+        skills: [
+          { name: "Python", icon: "🐍" },
+          { name: "Machine Learning", icon: "🤖" },
+          { name: "Deep Learning", icon: "🧠" },
+          { name: "TensorFlow", icon: "🔥" },
+          { name: "PyTorch", icon: "⚡" },
+          { name: "Scikit-learn", icon: "🤖" },
+          { name: "Pandas", icon: "🐼" },
+          { name: "NumPy", icon: "🔢" },
+          { name: "R Programming", icon: "📊" },
+          { name: "Jupyter", icon: "📓" },
+          { name: "Statistical Analysis", icon: "📈" },
+        ],
+      },
+      {
+        category: "🌐 Web Development",
+        skills: [
+          { name: "JavaScript", icon: "⚡" },
+          { name: "React.js", icon: "⚛️" },
+          { name: "HTML5", icon: "🌐" },
+          { name: "CSS3", icon: "🎨" },
+          { name: "Tailwind CSS", icon: "💨" },
+          { name: "Flask", icon: "🌶️" },
+        ],
+      },
+      {
+        category: "🔧 Version Control & Tools",
+        skills: [
+          { name: "Git", icon: "🔧" },
+          { name: "GitHub", icon: "📚" },
+        ],
+      },
+      {
+        category: "🗄️ Databases",
+        skills: [
+          { name: "SQL", icon: "🗄️" },
+          { name: "MySQL", icon: "🐬" },
+        ],
+      },
+      {
+        category: "📊 Analytics & BI Tools",
+        skills: [
+          { name: "Power BI", icon: "📊" },
+          { name: "Excel", icon: "📈" },
+          { name: "Tableau", icon: "📉" },
+          { name: "Matplotlib", icon: "📉" },
+          { name: "Seaborn", icon: "📊" },
+          { name: "Google Analytics", icon: "📈" },
+          { name: "Data Visualization", icon: "📊" },
+        ],
+      },
+    ],
+    [],
+  )
 
   const projects = useMemo(
     () => [
-  {
-    title: "Heart Disease Risk Analysis Dashboard | Power BI",
-    description:
-      "Interactive, insight-driven Power BI dashboard built using real-world clinical data from Kaggle. Objective: To identify and visualize key risk factors contributing to heart disease using a combination of clinical data analysis, Python preprocessing, and advanced DAX logic.",
-    tech: ["Power BI", "Python", "Pandas", "NumPy", "DAX", "Data Modeling", "Data Visualization"],
-    link: "https://github.com/VishalJha01/Heart-disease-dashboard",
-    image: "/projects/Heart Disease dashboard.png",
-  },
-  {
-    title: "AeroPulse AQI.AI - Smart Air Quality Prediction",
-    description:
-      "AI-powered air quality prediction platform using machine learning models to forecast AQI levels. Features real-time data visualization, interactive dashboards, and predictive analytics for environmental monitoring.",
-    tech: ["Python", "Pandas", "NumPy", "Scikit-learn", "Streamlit", "Machine Learning"],
-    link: "https://github.com/VishalJha01/Aeropulse-aqi.AI",
-    demo: "https://aeropulse-aqi-ai.streamlit.app",
-    image: "/projects/aeropulse.png",
-  },
-  {
-    title: "Dr. Dubey Dental Clinic",
-    description:
-      "Modern responsive website with appointment prediction system and patient analytics dashboard. Features optimized UI/UX and data-driven insights for clinic management.",
-    tech: ["HTML5", "CSS3", "JavaScript", "Tailwind CSS", "Data Analytics"],
-    link: "https://github.com/VishalJha01/Dr.-Dubey-Dental-Clinic",
-    demo: "https://dr-dubey-dental-clinic.vercel.app",
-    image: "/projects/dr-dubey-dental.png",
-  },
-  {
-    title: "Wecofy - Eco-Friendly E-commerce",
-    description:
-      "Sustainable e-commerce platform with intelligent product recommendation system, environmental impact analytics, and responsive design. Integrated ML-based user behavior analysis.",
-    tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "Flask", "Machine Learning"],
-    link: "https://github.com/VishalJha01/Wecofy-E-commerce-website",
-    demo: "https://wecofy-website.vercel.app",
-    image: "/projects/wecofy-ecommerce.png",
-  },
-]
+      {
+        title: "Heart Disease Risk Analysis Dashboard | Power BI",
+        description:
+          "Interactive, insight-driven Power BI dashboard built using real-world clinical data from Kaggle. Objective: To identify and visualize key risk factors contributing to heart disease using a combination of clinical data analysis, Python preprocessing, and advanced DAX logic.",
+        tech: ["Power BI", "Python", "Pandas", "NumPy", "DAX", "Data Modeling", "Data Visualization"],
+        link: "https://github.com/VishalJha01/Heart-disease-dashboard",
+        image: "/projects/Heart Disease dashboard.png",
+      },
+      {
+        title: "AeroPulse AQI.AI - Smart Air Quality Prediction",
+        description:
+          "AI-powered air quality prediction platform using machine learning models to forecast AQI levels. Features real-time data visualization, interactive dashboards, and predictive analytics for environmental monitoring.",
+        tech: ["Python", "Pandas", "NumPy", "Scikit-learn", "Streamlit", "Machine Learning"],
+        link: "https://github.com/VishalJha01/Aeropulse-aqi.AI",
+        demo: "https://aeropulse-aqi-ai.streamlit.app",
+        image: "/projects/aeropulse.png",
+      },
+      {
+        title: "Dr. Dubey Dental Clinic",
+        description:
+          "Modern responsive website with appointment prediction system and patient analytics dashboard. Features optimized UI/UX and data-driven insights for clinic management.",
+        tech: ["HTML5", "CSS3", "JavaScript", "Tailwind CSS", "Data Analytics"],
+        link: "https://github.com/VishalJha01/Dr.-Dubey-Dental-Clinic",
+        demo: "https://dr-dubey-dental-clinic.vercel.app",
+        image: "/projects/dr-dubey-dental.png",
+      },
+      {
+        title: "Wecofy - Eco-Friendly E-commerce",
+        description:
+          "Sustainable e-commerce platform with intelligent product recommendation system, environmental impact analytics, and responsive design. Integrated ML-based user behavior analysis.",
+        tech: ["HTML", "CSS", "JavaScript", "Bootstrap", "Flask", "Machine Learning"],
+        link: "https://github.com/VishalJha01/Wecofy-E-commerce-website",
+        demo: "https://wecofy-website.vercel.app",
+        image: "/projects/wecofy-ecommerce.png",
+      },
+    ],
     [],
   )
 
@@ -326,7 +311,6 @@ const skillCategories = useMemo(
     anchor.href = pdfUrl
     anchor.download = "Vishal_Jha_Resume.pdf"
     anchor.target = "_blank"
-
     try {
       document.body.appendChild(anchor)
       anchor.click()
@@ -337,8 +321,28 @@ const skillCategories = useMemo(
   }, [])
 
   const toggleDarkMode = useCallback(() => {
-    setIsDarkMode(!isDarkMode)
-    document.documentElement.classList.toggle("light-mode")
+    setIsDarkMode((prevMode) => {
+      const newMode = !prevMode
+      if (newMode) {
+        document.documentElement.classList.remove("light-mode")
+        document.documentElement.classList.add("dark") // Ensure dark class is present
+      } else {
+        document.documentElement.classList.add("light-mode")
+        document.documentElement.classList.remove("dark") // Remove dark class for light mode
+      }
+      return newMode
+    })
+  }, [])
+
+  // Initialize dark mode class on mount
+  useEffect(() => {
+    if (isDarkMode) {
+      document.documentElement.classList.add("dark")
+      document.documentElement.classList.remove("light-mode")
+    } else {
+      document.documentElement.classList.add("light-mode")
+      document.documentElement.classList.remove("dark")
+    }
   }, [isDarkMode])
 
   return (
@@ -351,13 +355,11 @@ const skillCategories = useMemo(
         <div
           className={`absolute inset-0 ${isDarkMode ? "bg-[linear-gradient(rgba(220,38,38,0.1)_1px,transparent_1px),linear-gradient(90deg,rgba(220,38,38,0.1)_1px,transparent_1px)]" : "bg-[linear-gradient(rgba(220,38,38,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(220,38,38,0.05)_1px,transparent_1px)]"} ${isMobile ? "bg-[size:120px_120px]" : "bg-[size:80px_80px]"}`}
         />
-
         {!isMobile && (
           <div
             className={`absolute inset-0 ${isDarkMode ? "bg-[linear-gradient(rgba(220,38,38,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(220,38,38,0.05)_1px,transparent_1px)]" : "bg-[linear-gradient(rgba(220,38,38,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(220,38,38,0.02)_1px,transparent_1px)]"} bg-[size:20px_20px]`}
           />
         )}
-
         {/* Saturn Rings - Only on desktop or simplified on mobile */}
         {!isMobile ? (
           <div className="absolute inset-0 flex items-center justify-center">
@@ -387,12 +389,10 @@ const skillCategories = useMemo(
             </div>
           </div>
         )}
-
         <div
           className={`absolute inset-0 ${isDarkMode ? "bg-gradient-to-t from-black/80 via-transparent to-black/40" : "bg-gradient-to-t from-white/60 via-transparent to-white/20"}`}
         />
       </div>
-
       {/* Responsive Navbar */}
       <nav
         className={`fixed top-0 w-full z-50 ${isDarkMode ? "bg-black/30" : "bg-white/30"} backdrop-blur-md ${isDarkMode ? "border-b border-red-900/30" : "border-b border-red-200/30"}`}
@@ -430,7 +430,6 @@ const skillCategories = useMemo(
                 </span>
               </button>
             </div>
-
             {/* Desktop Navigation */}
             <div className="hidden md:flex items-center space-x-8">
               <a
@@ -469,7 +468,6 @@ const skillCategories = useMemo(
               >
                 Contact
               </a>
-
               {/* Dark Mode Toggle */}
               <button
                 onClick={toggleDarkMode}
@@ -479,7 +477,6 @@ const skillCategories = useMemo(
                 {isDarkMode ? <Sun className="w-5 h-5" /> : <Moon className="w-5 h-5" />}
               </button>
             </div>
-
             {/* Mobile Menu Button */}
             <div className="md:hidden flex items-center space-x-2">
               <button
@@ -505,7 +502,6 @@ const skillCategories = useMemo(
               </button>
             </div>
           </div>
-
           {/* Mobile Menu */}
           {isMenuOpen && (
             <div
@@ -559,7 +555,6 @@ const skillCategories = useMemo(
           )}
         </div>
       </nav>
-
       {/* Content */}
       <div className="relative z-10 pt-16">
         {/* Hero Section */}
@@ -592,7 +587,6 @@ const skillCategories = useMemo(
                     </span>
                   )}
                 </div>
-
                 {/* Enhanced Tagline */}
                 <div className="mb-8">
                   <p
@@ -608,7 +602,6 @@ const skillCategories = useMemo(
                     <span>New Delhi, India</span>
                   </div>
                 </div>
-
                 {/* CTA Buttons */}
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button
@@ -629,7 +622,6 @@ const skillCategories = useMemo(
                     View Projects
                   </Button>
                 </div>
-
                 {/* Social Links */}
                 <div className="flex items-center space-x-3">
                   <a
@@ -674,7 +666,6 @@ const skillCategories = useMemo(
                   </a>
                 </div>
               </div>
-
               {/* Right side - Photo */}
               <div
                 className={`${isMobile ? "scroll-animate-essential" : "scroll-animate"} flex justify-center lg:justify-end transition-all duration-1000 delay-300 ${visibleElements.has("hero-image") ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"}`}
@@ -701,12 +692,10 @@ const skillCategories = useMemo(
             </div>
           </div>
         </section>
-
         {/* Section Divider */}
         <div
           className={`w-full h-px ${isDarkMode ? "bg-gradient-to-r from-transparent via-red-500/30 to-transparent" : "bg-gradient-to-r from-transparent via-red-500/20 to-transparent"} my-8`}
         />
-
         {/* About Section */}
         <section id="about" className="container mx-auto px-4 py-12">
           <div className="max-w-4xl mx-auto">
@@ -723,7 +712,6 @@ const skillCategories = useMemo(
                 Turning data into insights & ideas into impactful applications
               </p>
             </div>
-
             <div className="max-w-3xl mx-auto">
               <div
                 className={`${isMobile ? "scroll-animate-essential" : "scroll-animate"} transition-all duration-1000 ${visibleElements.has("about-content") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
@@ -749,12 +737,10 @@ const skillCategories = useMemo(
             </div>
           </div>
         </section>
-
         {/* Section Divider */}
         <div
           className={`w-full h-px ${isDarkMode ? "bg-gradient-to-r from-transparent via-red-500/30 to-transparent" : "bg-gradient-to-r from-transparent via-red-500/20 to-transparent"} my-8`}
         />
-
         {/* Skills Section */}
         <section id="skills" className="container mx-auto px-4 py-12">
           <div className="max-w-7xl mx-auto">
@@ -771,7 +757,6 @@ const skillCategories = useMemo(
                 Data science and development technologies I use to build intelligent solutions
               </p>
             </div>
-
             <div className="space-y-12">
               {skillCategories.map((category, categoryIndex) => (
                 <div
@@ -791,7 +776,6 @@ const skillCategories = useMemo(
                       className={`w-24 h-1 ${isDarkMode ? "bg-red-500/50" : "bg-red-500/40"} mx-auto rounded-full`}
                     />
                   </div>
-
                   {/* Skills Grid */}
                   <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 xl:grid-cols-6 gap-3">
                     {category.skills.map((skill, skillIndex) => (
@@ -821,12 +805,10 @@ const skillCategories = useMemo(
             </div>
           </div>
         </section>
-
         {/* Section Divider */}
         <div
           className={`w-full h-px ${isDarkMode ? "bg-gradient-to-r from-transparent via-red-500/30 to-transparent" : "bg-gradient-to-r from-transparent via-red-500/20 to-transparent"} my-8`}
         />
-
         {/* Projects Section */}
         <section id="projects" className="container mx-auto px-4 py-12">
           <div className="max-w-6xl mx-auto">
@@ -843,7 +825,6 @@ const skillCategories = useMemo(
                 AI-powered applications showcasing data science and full-stack development
               </p>
             </div>
-
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {projects.map((project, index) => (
                 <Card
@@ -867,7 +848,6 @@ const skillCategories = useMemo(
                       className={`absolute inset-0 ${isDarkMode ? "bg-gradient-to-t from-gray-900/80 to-transparent" : "bg-gradient-to-t from-white/80 to-transparent"} opacity-60 group-hover:opacity-40 transition-opacity duration-150`}
                     />
                   </div>
-
                   <CardContent className="p-6">
                     <h3
                       className={`font-bold text-xl mb-3 ${isDarkMode ? "text-gray-200 group-hover:text-red-400" : "text-gray-800 group-hover:text-red-600"} transition-colors duration-150`}
@@ -898,7 +878,7 @@ const skillCategories = useMemo(
                         <Github className="w-4 h-4 mr-2" />
                         Code
                       </Button>
-                      {project.demo !== "#" && (
+                      {project.demo && ( // Only render if demo link exists
                         <Button
                           className={`flex-1 bg-gradient-to-r from-red-600 to-red-700 hover:from-red-700 hover:to-red-800 text-white transition-all duration-150 rounded-lg ${!isMobile ? "transform hover:scale-105" : ""}`}
                           onClick={() => window.open(project.demo, "_blank")}
@@ -912,7 +892,6 @@ const skillCategories = useMemo(
                 </Card>
               ))}
             </div>
-
             {/* CTA for more projects */}
             <div className="text-center mt-12">
               <Button
@@ -927,12 +906,10 @@ const skillCategories = useMemo(
             </div>
           </div>
         </section>
-
         {/* Section Divider */}
         <div
           className={`w-full h-px ${isDarkMode ? "bg-gradient-to-r from-transparent via-red-500/30 to-transparent" : "bg-gradient-to-r from-transparent via-red-500/20 to-transparent"} my-8`}
         />
-
         {/* Certifications Section */}
         <section id="certifications" className="container mx-auto px-4 py-12">
           <div className="max-w-6xl mx-auto">
@@ -949,7 +926,6 @@ const skillCategories = useMemo(
                 Data science and development certifications showcasing expertise growth
               </p>
             </div>
-
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {certifications.map((cert, index) => (
                 <Card
@@ -985,12 +961,10 @@ const skillCategories = useMemo(
             </div>
           </div>
         </section>
-
         {/* Section Divider */}
         <div
           className={`w-full h-px ${isDarkMode ? "bg-gradient-to-r from-transparent via-red-500/30 to-transparent" : "bg-gradient-to-r from-transparent via-red-500/20 to-transparent"} my-8`}
         />
-
         {/* Contact Section */}
         <section id="contact" className="container mx-auto px-4 py-12">
           <div className="max-w-4xl mx-auto">
@@ -1007,7 +981,6 @@ const skillCategories = useMemo(
                 Ready to discuss your next project? I'd love to hear from you.
               </p>
             </div>
-
             <div
               className={`${isMobile ? "scroll-animate-essential" : "scroll-animate"} grid md:grid-cols-3 gap-6 mb-8 transition-all duration-1000 ${visibleElements.has("contact-items") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
               id="contact-items"
@@ -1031,7 +1004,6 @@ const skillCategories = useMemo(
                   +91 8851072378
                 </a>
               </div>
-
               {/* Email */}
               <div
                 className={`group text-center p-6 ${isDarkMode ? "bg-gray-900/30 border border-gray-700/30 hover:border-red-500/50" : "bg-white/30 border border-gray-200/30 hover:border-red-500/50"} backdrop-blur-sm rounded-lg transition-all duration-150 ${isDarkMode ? "hover:bg-gray-800/40" : "hover:bg-white/50"}`}
@@ -1051,7 +1023,6 @@ const skillCategories = useMemo(
                   vishaljha055616@gmail.com
                 </a>
               </div>
-
               {/* Location */}
               <div
                 className={`group text-center p-6 ${isDarkMode ? "bg-gray-900/30 border border-gray-700/30 hover:border-red-500/50" : "bg-white/30 border border-gray-200/30 hover:border-red-500/50"} backdrop-blur-sm rounded-lg transition-all duration-150 ${isDarkMode ? "hover:bg-gray-800/40" : "hover:bg-white/50"}`}
@@ -1067,7 +1038,6 @@ const skillCategories = useMemo(
                 <p className={`${isDarkMode ? "text-gray-400" : "text-gray-600"}`}>New Delhi, India</p>
               </div>
             </div>
-
             {/* Final CTA */}
             <div className="text-center">
               <Button
@@ -1081,7 +1051,6 @@ const skillCategories = useMemo(
             </div>
           </div>
         </section>
-
         {/* Footer */}
         <footer
           className={`${isMobile ? "scroll-animate-essential" : "scroll-animate"} container mx-auto px-4 py-12 text-center transition-all duration-1000 ${visibleElements.has("footer") ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"}`}
@@ -1118,7 +1087,7 @@ const skillCategories = useMemo(
             <p
               className={`${isDarkMode ? "text-gray-500 hover:text-gray-400" : "text-gray-600 hover:text-gray-700"} transition-colors duration-150`}
             >
-             © 2025 Vishal Jha. Built with curiosity and code.
+              © 2025 Vishal Jha. Built with curiosity and code.
             </p>
           </div>
         </footer>
@@ -1126,4 +1095,3 @@ const skillCategories = useMemo(
     </div>
   )
 }
-
