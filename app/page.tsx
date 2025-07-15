@@ -222,6 +222,14 @@ const skillCategories = useMemo(
   const projects = useMemo(
     () => [
       {
+  title: "Heart Disease Risk Analysis Dashboard | Power BI",
+  description:
+    "Interactive, insight-driven Power BI dashboard built using real-world clinical data from Kaggle. Objective: To identify and visualize key risk factors contributing to heart disease using a combination of clinical data analysis, Python preprocessing, and advanced DAX logic.",
+  tech: ["Power BI", "Python", "Pandas", "NumPy", "DAX", "Data Modeling", "Data Visualization"],
+  link: "https://github.com/VishalJha01/Heart-disease-dashboard",
+  image: "/projects/Heart Disease dashboard.png",
+      },
+      {
         title: "AeroPulse AQI.AI - Smart Air Quality Prediction",
         description:
           "AI-powered air quality prediction platform using machine learning models to forecast AQI levels. Features real-time data visualization, interactive dashboards, and predictive analytics for environmental monitoring.",
