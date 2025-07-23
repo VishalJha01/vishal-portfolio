@@ -42,7 +42,7 @@ export default function Portfolio() {
   const [visibleElements, setVisibleElements] = useState(new Set<string>())
   const [isDarkMode, setIsDarkMode] = useState(true)
   const isMobile = useIsMobile()
-  const fullName = "VISHAL JHA"
+  const fullName = "JHA Bhai Gurgaon Systum"
   const observerRef = useRef<IntersectionObserver | null>(null)
   const typewriterTimeoutRef = useRef<NodeJS.Timeout | null>(null)
   const typewriterIntervalRef = useRef<NodeJS.Timeout | null>(null)
