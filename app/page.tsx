@@ -8,7 +8,6 @@ import { useState, useEffect, useRef, useCallback, useMemo } from "react"
 // Mobile detection hook
 const useIsMobile = () => {
   const [isMobile, setIsMobile] = useState(false)
-
   useEffect(() => {
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768 || "ontouchstart" in window)
@@ -102,9 +101,11 @@ export default function Portfolio() {
       if (typewriterIntervalRef.current) {
         clearInterval(typewriterIntervalRef.current)
       }
+
       setIsTyping(true)
       setTypewriterText("")
       let currentIndex = 0
+
       typewriterIntervalRef.current = setInterval(
         () => {
           if (currentIndex <= fullName.length) {
@@ -128,6 +129,7 @@ export default function Portfolio() {
 
     // Repeat typewriter - less frequent on mobile
     const repeatInterval = setInterval(startTypewriter, isMobile ? 15000 : 10000)
+
     return () => {
       clearInterval(repeatInterval)
       if (typewriterTimeoutRef.current) {
@@ -201,6 +203,14 @@ export default function Portfolio() {
 
   const projects = useMemo(
     () => [
+      {
+        title: "🌍 Global Development Indicators Dashboard | Power BI",
+        description:
+          "Comprehensive Power BI dashboard analyzing global development trends using World Bank's World Development Indicators dataset. Features 1,000+ socio-economic indicators across 200+ countries with interactive visualizations, dynamic DAX calculations, and advanced data modeling for tracking GDP, population, life expectancy, and environmental metrics.",
+        tech: ["Power BI", "DAX", "Power Query", "Data Modeling", "Data Visualization", "World Bank API"],
+        link: "https://github.com/VishalJha01/Global-development-indicators-Dashboard",
+        image: "/projects/Global.png",
+      },
       {
         title: "Heart Disease Risk Analysis Dashboard | Power BI",
         description:
@@ -355,6 +365,7 @@ export default function Portfolio() {
             className={`absolute inset-0 ${isDarkMode ? "bg-[linear-gradient(rgba(220,38,38,0.05)_1px,transparent_1px),linear-gradient(90deg,rgba(220,38,38,0.05)_1px,transparent_1px)]" : "bg-[linear-gradient(rgba(220,38,38,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(220,38,38,0.02)_1px,transparent_1px)]"} bg-[size:20px_20px]`}
           />
         )}
+
         {/* Saturn Rings - Only on desktop or simplified on mobile */}
         {!isMobile ? (
           <div className="absolute inset-0 flex items-center justify-center">
@@ -384,6 +395,7 @@ export default function Portfolio() {
             </div>
           </div>
         )}
+
         <div
           className={`absolute inset-0 ${isDarkMode ? "bg-gradient-to-t from-black/80 via-transparent to-black/40" : "bg-gradient-to-t from-white/60 via-transparent to-white/20"}`}
         />
@@ -589,6 +601,7 @@ export default function Portfolio() {
                     </span>
                   )}
                 </div>
+
                 {/* Enhanced Tagline */}
                 <div className="mb-8">
                   <p
@@ -604,6 +617,7 @@ export default function Portfolio() {
                     <span>New Delhi, India</span>
                   </div>
                 </div>
+
                 {/* CTA Buttons */}
                 <div className="flex flex-wrap gap-4 mb-8">
                   <Button
@@ -624,6 +638,7 @@ export default function Portfolio() {
                     View Projects
                   </Button>
                 </div>
+
                 {/* Social Links */}
                 <div className="flex items-center space-x-3">
                   <a
@@ -900,6 +915,7 @@ export default function Portfolio() {
                 </Card>
               ))}
             </div>
+
             {/* CTA for more projects */}
             <div className="text-center mt-12">
               <Button
